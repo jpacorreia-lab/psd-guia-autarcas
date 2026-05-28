@@ -214,6 +214,11 @@ body{font-family:var(--font);color:var(--blk)}
       <div><div class="cargo-title">Membro da Junta de Freguesia</div><div class="cargo-sub">Faço parte do executivo — quero saber o meu papel</div></div>
       <div class="cargo-arr">›</div>
     </div>
+    <div class="cargo-btn" style="border-left-color:var(--g400);background:white" onclick="goTo('s-contactos')">
+      <div class="cargo-icon">💬</div>
+      <div><div class="cargo-title" style="color:var(--g600)">Tens dúvidas?</div><div class="cargo-sub">Contacta a Comissão Política PSD Montalegre</div></div>
+      <div class="cargo-arr">›</div>
+    </div>
   </div>
   <nav class="bottom-nav">
     <button class="nb active" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
@@ -712,29 +717,39 @@ body{font-family:var(--font);color:var(--blk)}
       <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
-    <div style="background:var(--o-bg);border-left:3px solid var(--o);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:10px 12px;font-size:12px;color:var(--o2);line-height:1.6;margin-bottom:14px">Em caso de dúvida ou situação urgente, contacta directamente a estrutura concelhia.</div>
-    <div class="slabel">Estrutura Concelhia</div>
-    <div class="contact-card">
-      <div class="cav" style="background:var(--o-bg);color:var(--o2)">JP</div>
-      <div style="flex:1"><div class="cname">José Pedro Correia</div><div class="crole">Presidente Concelhia · PSD Montalegre</div>
-        <div class="clinks">
-          <a class="clink" style="color:var(--o)" href="tel:+351917708605">📱 917 708 605</a>
-          <a class="clink" style="color:var(--blue)" href="mailto:jpacorreia@gmail.com">✉️ jpacorreia@gmail.com</a>
+    <div style="background:var(--o);border-radius:var(--r);padding:20px 16px;margin-bottom:16px;text-align:center">
+      <div style="font-size:22px;margin-bottom:8px">💬</div>
+      <div style="font-size:17px;font-weight:800;color:white;margin-bottom:4px">Tens dúvidas?</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6">Contacta a Comissão Política<br><strong style="color:white">PSD Montalegre</strong></div>
+    </div>
+
+    <div style="background:var(--o-bg);border-radius:var(--r);padding:16px;margin-bottom:10px;border:0.5px solid var(--g200);text-align:center">
+      <div style="font-size:14px;color:var(--g600);line-height:1.6;margin-bottom:12px">Tens dúvidas?<br>Entra em contacto com a<br><strong style="color:var(--blk)">Comissão Política PSD Montalegre</strong></div>
+      <button onclick="document.getElementById('cp-contactos').style.display=document.getElementById('cp-contactos').style.display==='none'?'block':'none'" style="background:var(--o);color:white;border:none;border-radius:var(--r-sm);padding:12px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--font);width:100%">Ver contactos →</button>
+    </div>
+    <div id="cp-contactos" style="display:none">
+      <div class="contact-card">
+        <div class="cav" style="background:var(--o-bg);color:var(--o2)">JP</div>
+        <div style="flex:1"><div class="cname">José Pedro Correia</div><div class="crole">Presidente Concelhia · PSD Montalegre</div>
+          <div class="clinks">
+            <a class="clink" style="color:var(--o)" href="tel:+351917708605">📱 917 708 605</a>
+            <a class="clink" style="color:var(--blue)" href="mailto:jpacorreia@gmail.com">✉️ jpacorreia@gmail.com</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="contact-card">
-      <div class="cav" style="background:var(--blue-bg);color:var(--blue)">MA</div>
-      <div style="flex:1"><div class="cname">Márcio Azevedo</div><div class="crole">PSD Montalegre</div>
-        <div class="clinks"><a class="clink" style="color:var(--o)" href="tel:+351964202372">📱 964 202 372</a></div>
+      <div class="contact-card">
+        <div class="cav" style="background:var(--blue-bg);color:var(--blue)">MA</div>
+        <div style="flex:1"><div class="cname">Márcio Azevedo</div><div class="crole">Comissão Política · PSD Montalegre</div>
+          <div class="clinks"><a class="clink" style="color:var(--o)" href="tel:+351964202372">📱 964 202 372</a></div>
+        </div>
       </div>
-    </div>
-    <div class="contact-card">
-      <div class="cav" style="background:var(--green-bg);color:var(--green)">DG</div>
-      <div style="flex:1"><div class="cname">Duarte Gonçalves</div><div class="crole">PSD Montalegre</div>
-        <div class="clinks">
-          <a class="clink" style="color:var(--o)" href="tel:+351962617998">📱 962 617 998</a>
-          <a class="clink" style="color:var(--blue)" href="mailto:jduartegoncalves@gmail.com">✉️ jduartegoncalves@gmail.com</a>
+      <div class="contact-card">
+        <div class="cav" style="background:var(--green-bg);color:var(--green)">DG</div>
+        <div style="flex:1"><div class="cname">Duarte Gonçalves</div><div class="crole">Comissão Política · PSD Montalegre</div>
+          <div class="clinks">
+            <a class="clink" style="color:var(--o)" href="tel:+351962617998">📱 962 617 998</a>
+            <a class="clink" style="color:var(--blue)" href="mailto:jduartegoncalves@gmail.com">✉️ jduartegoncalves@gmail.com</a>
+          </div>
         </div>
       </div>
     </div>
