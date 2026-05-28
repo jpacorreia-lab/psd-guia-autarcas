@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#F47920">
+  <title>Guia do Autarca · PSD Montalegre</title>
+  <meta name="description" content="Guia prático para elementos das Juntas de Freguesia do PSD Montalegre.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    :root {
+      --o: #F47920;
+      --o2: #C9611A;
+      --o-bg: #FEF3EB;
+      --red: #ED1C24;
+      --blk: #111111;
+      --blk2: #2A2A2A;
+      --g100: #F6F5F2;
+      --g200: #ECEAE5;
+      --g400: #9B9993;
+      --g600: #5C5A56;
+      --white: #FFFFFF;
+      --green: #2E7D32;
+      --green-bg: #E8F5E9;
+      --blue: #1565C0;
+      --blue-bg: #E3F2FD;
+      --r: 14px;
+      --r-sm: 8px;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; background: var(--g100); }
+    body { font-family: var(--font); background: var(--g100); color: var(--blk); min-height: 100vh; }
+
+    /* ─── SCREENS ─── */
+    .screen { display: none; min-height: 100vh; flex-direction: column; }
+    .screen.active { display: flex; }
+
+    /* ─── TOP BAR ─── */
+    .topbar {
+      background: var(--o);
+      padding: env(safe-area-inset-top, 0) 0 0;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+    }
+    .back-btn {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      color: white;
+    }
+    .back-btn svg { width: 18px; height: 18px; }
+    .topbar-logo {
+      background: white;
+      border-radius: 6px;
+      padding: 5px 9px;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--o);
+      letter-spacing: -0.01em;
+      flex-shrink: 0;
+    }
+    .topbar-title {
+      flex: 1;
+      font-size: 15px;
+      font-weight: 600;
+      color: white;
+      line-height: 1.2;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .topbar-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 1px;
+    }
+
+    /* ─── HOME SCREEN ─── */
+    .home-hero {
+      background: var(--o);
+      padding: 8px 20px 28px;
+    }
+    .home-hero h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .home-hero h1 span { color: rgba(255,255,255,0.6); font-weight: 400; display: block; font-size: 14px; margin-bottom: 6px; letter-spacing: 0.02em; font-weight: 500; }
+    .home-hero p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .home-body { padding: 20px 16px 100px; flex: 1; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--g400);
+      margin-bottom: 10px;
+      margin-top: 24px;
+      padding-left: 2px;
+    }
+    .section-label:first-child { margin-top: 0; }
+
+    /* ─── CARGO CARDS ─── */
+    .cargo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .cargo-card {
+      background: white;
+      border-radius: var(--r);
+      padding: 16px 14px;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: border-color 0.15s, transform 0.1s;
+      position: relative;
+      overflow: hidden;
+      -webkit-user-select: none; user-select: none;
+    }
+    .cargo-card:active { transform: scale(0.97); }
+    .cargo-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--o);
+    }
+    .cargo-card.blue::before { background: var(--blue); }
+    .cargo-card.green::before { background: var(--green); }
+    .cargo-card.dark::before { background: var(--blk2); }
+    .cargo-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+    .cargo-title { font-size: 14px; font-weight: 700; color: var(--blk); line-height: 1.3; }
+    .cargo-sub { font-size: 11px; color: var(--g400); margin-top: 3px; line-height: 1.4; }
+    .cargo-count {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      background: var(--o-bg);
+      color: var(--o);
+    }
+    .cargo-card.blue .cargo-count { background: var(--blue-bg); color: var(--blue); }
+    .cargo-card.green .cargo-count { background: var(--green-bg); color: var(--green); }
+    .cargo-card.dark .cargo-count { background: var(--g200); color: var(--g600); }
+
+    /* ─── SEARCH ─── */
+    .search-wrap {
+      background: white;
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+      margin-bottom: 6px;
+    }
+    .search-wrap svg { color: var(--g400); flex-shrink: 0; }
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 14px 0;
+      font-size: 15px;
+      font-family: var(--font);
+      background: transparent;
+      color: var(--blk);
+    }
+    .search-input::placeholder { color: var(--g400); }
+    .search-clear {
+      background: var(--g200);
+      border: none;
+      border-radius: 50%;
+      width: 22px; height: 22px;
+      display: none;
+      align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--g600);
+      flex-shrink: 0;
+    }
+    .search-clear.visible { display: flex; }
+
+    /* Search results */
+    .search-results { display: none; }
+    .search-results.visible { display: block; }
+    .result-item {
+      background: white;
+      border-radius: var(--r-sm);
+      padding: 14px 16px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      border-left: 3px solid var(--o);
+    }
+    .result-item:active { opacity: 0.8; }
+    .result-cargo {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--o);
+      margin-bottom: 4px;
+    }
+    .result-title { font-size: 14px; font-weight: 600; color: var(--blk); }
+    .result-preview { font-size: 12px; color: var(--g600); margin-top: 4px; line-height: 1.5; }
+    .result-item.blue { border-left-color: var(--blue); }
+    .result-item.blue .result-cargo { color: var(--blue); }
+    .result-item.green { border-left-color: var(--green); }
+    .result-item.green .result-cargo { color: var(--green); }
+
+    /* ─── CARGO SCREEN ─── */
+    .cargo-screen-body { padding: 16px 16px 100px; flex: 1; overflow-y: auto; }
+
+    /* Situation cards */
+    .situation {
+      background: white;
+      border-radius: var(--r);
+      margin-bottom: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .sit-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      cursor: pointer;
+      -webkit-user-select: none; user-select: none;
+    }
+    .sit-header:active { background: var(--g100); }
+    .sit-emoji { font-size: 22px; flex-shrink: 0; width: 36px; text-align: center; }
+    .sit-body { flex: 1; min-width: 0; }
+    .sit-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--o);
+      margin-bottom: 3px;
+    }
+    .sit-tag.blue { color: var(--blue); }
+    .sit-tag.green { color: var(--green); }
+    .sit-title { font-size: 14px; font-weight: 600; color: var(--blk); line-height: 1.35; }
+    .sit-arrow {
+      font-size: 18px;
+      color: var(--g400);
+      transition: transform 0.22s;
+      flex-shrink: 0;
+    }
+    .situation.open .sit-arrow { transform: rotate(90deg); color: var(--o); }
+
+    .sit-content {
+      display: none;
+      padding: 0 16px 16px 64px;
+    }
+    .situation.open .sit-content { display: block; }
+
+    .steps-list { list-style: none; }
+    .step-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+    .step-item:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--o);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-num.blue { background: var(--blue); }
+    .step-num.green { background: var(--green); }
+    .step-text { font-size: 14px; color: var(--blk2); line-height: 1.6; }
+    .step-text strong { color: var(--blk); font-weight: 600; }
+    .step-text em { color: var(--g600); font-style: normal; font-size: 12px; display: block; margin-top: 3px; }
+
+    .law-box {
+      margin-top: 12px;
+      background: var(--blue-bg);
+      border-radius: var(--r-sm);
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--blue);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .law-box span { line-height: 1.5; }
+
+    .tip-box {
+      margin-top: 12px;
+      background: var(--o-bg);
+      border-radius: var(--r-sm);
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--o2);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    /* ─── BOTTOM NAV ─── */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
+      background: white;
+      border-top: 1px solid var(--g200);
+      display: flex;
+      padding: 8px 0 env(safe-area-inset-bottom, 8px);
+      z-index: 200;
+    }
+    .nav-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 4px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--g400);
+      font-family: var(--font);
+      font-size: 10px;
+      font-weight: 500;
+      -webkit-user-select: none; user-select: none;
+    }
+    .nav-btn svg { width: 22px; height: 22px; }
+    .nav-btn.active { color: var(--o); }
+    .nav-btn.active svg { stroke: var(--o); }
+
+    /* ─── EMPTY ─── */
+    .empty { text-align: center; padding: 48px 24px; color: var(--g400); }
+    .empty-icon { font-size: 42px; margin-bottom: 12px; }
+    .empty p { font-size: 14px; line-height: 1.6; }
+
+    /* ─── CONTACTS SCREEN ─── */
+    .contacts-body { padding: 16px 16px 100px; flex: 1; }
+    .contact-card {
+      background: white;
+      border-radius: var(--r);
+      padding: 16px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .contact-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .contact-avatar.orange { background: var(--o-bg); }
+    .contact-avatar.blue { background: var(--blue-bg); }
+    .contact-avatar.green { background: var(--green-bg); }
+    .contact-info { flex: 1; min-width: 0; }
+    .contact-name { font-size: 14px; font-weight: 600; color: var(--blk); }
+    .contact-role { font-size: 12px; color: var(--g400); margin-top: 2px; }
+    .contact-detail { font-size: 13px; color: var(--o); margin-top: 4px; font-weight: 500; }
+
+    /* ─── INFO SCREEN ─── */
+    .info-body { padding: 16px 16px 100px; flex: 1; }
+    .info-card {
+      background: white;
+      border-radius: var(--r);
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .info-card-header {
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--g200);
+    }
+    .info-card-header h3 { font-size: 14px; font-weight: 600; color: var(--blk); }
+    .info-card-body { padding: 14px 16px; font-size: 13px; color: var(--g600); line-height: 1.7; }
+    .info-card-body strong { color: var(--blk); font-weight: 600; }
+    .version-tag {
+      text-align: center;
+      padding: 20px;
+      font-size: 11px;
+      color: var(--g400);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     SCREEN 1 — HOME
+══════════════════════════════════════ -->
+<div class="screen active" id="screen-home">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-logo">↑PSD</div>
+      <div>
+        <div class="topbar-title">Guia do Autarca</div>
+        <div class="topbar-sub">PSD Montalegre · 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-hero">
+    <h1>
+      <span>O que devo fazer?</span>
+      Encontra a resposta em segundos.
+    </h1>
+    <p>Escolhe o teu cargo ou pesquisa diretamente a situação concreta.</p>
+  </div>
+
+  <div class="home-body">
+
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="search-input" id="homeSearch" type="search" placeholder="Ex: queixa munícipe, reunião…" autocomplete="off" autocorrect="off">
+      <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+    </div>
+
+    <div class="search-results" id="searchResults"></div>
+
+    <div id="homeDefault">
+      <div class="section-label">Escolhe o teu cargo</div>
+      <div class="cargo-grid">
+        <div class="cargo-card" onclick="goTo('screen-pj')">
+          <span class="cargo-icon">👤</span>
+          <div class="cargo-title">Presidente de Junta</div>
+          <div class="cargo-sub">Competências e situações do dia a dia</div>
+          <div class="cargo-count">12 situações</div>
+        </div>
+        <div class="cargo-card blue" onclick="goTo('screen-af')">
+          <span class="cargo-icon">🏛️</span>
+          <div class="cargo-title">Assembleia de Freguesia</div>
+          <div class="cargo-sub">Sessões, intervenções e fiscalização</div>
+          <div class="cargo-count" style="">8 situações</div>
+        </div>
+        <div class="cargo-card green" onclick="goTo('screen-vogal')">
+          <span class="cargo-icon">🤝</span>
+          <div class="cargo-title">Vogal da Junta</div>
+          <div class="cargo-sub">Apoio ao presidente e pelouros</div>
+          <div class="cargo-count">6 situações</div>
+        </div>
+        <div class="cargo-card dark" onclick="goTo('screen-cm')">
+          <span class="cargo-icon">🔗</span>
+          <div class="cargo-title">Relação com a CM</div>
+          <div class="cargo-sub">Como pedir, comunicar e escalar</div>
+          <div class="cargo-count">5 situações</div>
+        </div>
+      </div>
+
+      <div class="section-label">Situações urgentes</div>
+      <div class="situation" id="urg-1">
+        <div class="sit-header" onclick="toggleSit('urg-1')">
+          <div class="sit-emoji">🚨</div>
+          <div class="sit-body">
+            <div class="sit-tag">Urgente</div>
+            <div class="sit-title">Um munícipe tem uma situação de emergência</div>
+          </div>
+          <div class="sit-arrow">›</div>
+        </div>
+        <div class="sit-content">
+          <ul class="steps-list">
+            <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Avalia o tipo de emergência:</strong> saúde, segurança ou social.<em>Se for risco de vida imediato → liga 112 primeiro.</em></div></li>
+            <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Regista tudo por escrito:</strong> nome, morada, data, hora e descrição do problema.</div></li>
+            <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Contacta a Câmara Municipal</strong> — Divisão de Ação Social se for situação social, Serviços Técnicos se for infraestrutura.</div></li>
+            <li class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Informa o munícipe</strong> do que foi feito e do prazo esperado. Nunca deixes sem resposta.</div></li>
+          </ul>
+          <div class="tip-box">💡 <span>Mesmo que a competência seja da Câmara, a Junta é a primeira linha. O munícipe não deve ser despachado — deve ser acompanhado.</span></div>
+        </div>
+      </div>
+
+      <div class="situation" id="urg-2">
+        <div class="sit-header" onclick="toggleSit('urg-2')">
+          <div class="sit-emoji">📋</div>
+          <div class="sit-body">
+            <div class="sit-tag">Urgente</div>
+            <div class="sit-title">Tenho uma reunião amanhã e não sei como preparar</div>
+          </div>
+          <div class="sit-arrow">›</div>
+        </div>
+        <div class="sit-content">
+          <ul class="steps-list">
+            <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Lê a ordem do dia</strong> com antecedência e identifica os pontos que precisam de decisão.</div></li>
+            <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Para cada ponto:</strong> define a posição do grupo, os argumentos e as perguntas a colocar.</div></li>
+            <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Prepara intervenções curtas</strong> — máximo 2 minutos. Clareza vale mais que extensão.</div></li>
+            <li class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Regista as deliberações</strong> na ata — data, presentes, votações e decisões.</div></li>
+          </ul>
+          <div class="tip-box">💡 <span>Uma intervenção bem preparada de 90 segundos tem mais impacto que 10 minutos de improviso.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" onclick="goTo('screen-home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Início
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-pj')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      Cargos
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-lei')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Lei
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-info')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Sobre
+    </button>
+  </nav>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SCREEN 2 — PRESIDENTE DE JUNTA
+══════════════════════════════════════ -->
+<div class="screen" id="screen-pj">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </button>
+      <div>
+        <div class="topbar-title">👤 Presidente de Junta</div>
+        <div class="topbar-sub">Competências e situações concretas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cargo-screen-body">
+
+    <div class="section-label">O que devo fazer quando…</div>
+
+    <div class="situation" id="pj-1">
+      <div class="sit-header" onclick="toggleSit('pj-1')">
+        <div class="sit-emoji">😤</div>
+        <div class="sit-body">
+          <div class="sit-tag">Atendimento</div>
+          <div class="sit-title">Um munícipe vem queixar-se de um problema</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Ouve sem interromper.</strong> O munícipe precisa de se sentir ouvido antes de ser encaminhado.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Identifica a competência:</strong> é da Junta, da Câmara ou de outra entidade?<em>Junta: espaços públicos locais, limpeza, pequenas obras. Câmara: obras maiores, licenças, ação social.</em></div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Regista a queixa</strong> — data, nome, descrição e compromisso assumido.</div></li>
+          <li class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Se for competência da Junta:</strong> resolve ou agenda. Se for da Câmara: encaminha por escrito e informa o munícipe.<em>Nunca deixes sem uma resposta concreta.</em></div></li>
+          <li class="step-item"><div class="step-num">5</div><div class="step-text"><strong>Faz seguimento</strong> ao problema. Um munícipe que recebe resposta confia na instituição.</div></li>
+        </ul>
+        <div class="tip-box">💡 <span>Regista sempre. Uma queixa sem registo é uma queixa sem solução.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="pj-2">
+      <div class="sit-header" onclick="toggleSit('pj-2')">
+        <div class="sit-emoji">🗳️</div>
+        <div class="sit-body">
+          <div class="sit-tag">Reuniões</div>
+          <div class="sit-title">Tenho de preparar e conduzir uma reunião de junta</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Define a ordem do dia</strong> com antecedência e convoca os membros com a antecedência legal.<em>Mínimo 3 dias úteis de antecedência.</em></div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Prepara os documentos</strong> de suporte para cada ponto a deliberar.</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Na reunião:</strong> preside, modera, garante que todos falam e que as votações são claras.</div></li>
+          <li class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Ata obrigatória:</strong> data, presentes, pontos, deliberações e votações. Aprovada na reunião seguinte.</div></li>
+        </ul>
+        <div class="law-box">📖 <span><strong>Lei 75/2013, art. 24.º —</strong> O presidente convoca e preside às reuniões. As deliberações são tomadas por maioria.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="pj-3">
+      <div class="sit-header" onclick="toggleSit('pj-3')">
+        <div class="sit-emoji">🔨</div>
+        <div class="sit-body">
+          <div class="sit-tag">Obras e Infraestrutura</div>
+          <div class="sit-title">Há uma obra ou reparação urgente na freguesia</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Verifica se está no orçamento da Junta</strong> e se é competência da Junta ou da Câmara.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Se for competência da Câmara:</strong> comunica por escrito (ofício ou email) com descrição, localização e urgência. Pede prazo de resposta.</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Documenta com fotografias</strong> — antes e depois. Protege a Junta e evidencia a ação.</div></li>
+          <li class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Se urgente e sem resposta:</strong> escala ao Presidente da Câmara, comunicando por escrito.</div></li>
+        </ul>
+        <div class="tip-box">💡 <span>Tudo o que pedes à Câmara deve ficar por escrito. Pedidos verbais não existem.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="pj-4">
+      <div class="sit-header" onclick="toggleSit('pj-4')">
+        <div class="sit-emoji">💰</div>
+        <div class="sit-body">
+          <div class="sit-tag">Finanças</div>
+          <div class="sit-title">Preciso de gerir o orçamento da junta</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>O orçamento é aprovado pela Assembleia de Freguesia.</strong> Só podes gastar o que está aprovado.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Toda a despesa precisa de documento:</strong> fatura, recibo ou nota de encomenda. Sem documento, sem pagamento.</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Respeita os limites de ajuste direto:</strong> acima de €20.000 é obrigatório consulta prévia a 3 entidades.<em>Acima de €75.000 — concurso público obrigatório.</em></div></li>
+          <li class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Relatório de execução anual</strong> é obrigatório e sujeito a aprovação da Assembleia.</div></li>
+        </ul>
+        <div class="law-box">📖 <span><strong>Código dos Contratos Públicos (CCP) —</strong> Define os limiares de ajuste direto, consulta prévia e concurso público.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="pj-5">
+      <div class="sit-header" onclick="toggleSit('pj-5')">
+        <div class="sit-emoji">📣</div>
+        <div class="sit-body">
+          <div class="sit-tag">Comunicação</div>
+          <div class="sit-title">Quero comunicar melhor com a população</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Define canais regulares:</strong> Facebook da junta, placard físico, e quando possível newsletter mensal.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Comunica o que fizeste,</strong> não só o que vais fazer. Resultados concretos geram confiança.</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Informa sobre deliberações</strong> da reunião de junta — de forma resumida e acessível.</div></li>
+          <li class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Responde sempre</strong> a comentários e mensagens. O silêncio é sempre lido como desinteresse.</div></li>
+        </ul>
+        <div class="tip-box">💡 <span>Quem não comunica, cede o espaço narrativo à oposição. Comunica sempre, mesmo quando as notícias não são boas.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="pj-6">
+      <div class="sit-header" onclick="toggleSit('pj-6')">
+        <div class="sit-emoji">🧾</div>
+        <div class="sit-body">
+          <div class="sit-tag">Documentação</div>
+          <div class="sit-title">Preciso de emitir certidões ou atestados</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Atestados de residência</strong> — a Junta tem competência para emitir. Verifica os dados com o recenseamento local.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Certidões diversas</strong> — vida e residência, situação de pobreza, entre outras. Assinadas pelo Presidente.</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Regista sempre</strong> no livro ou sistema de registo da Junta — número, data e beneficiário.</div></li>
+        </ul>
+        <div class="law-box">📖 <span><strong>Lei 75/2013, art. 16.º —</strong> Competências próprias da Junta incluem a emissão de atestados e declarações.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn" onclick="goTo('screen-home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Início
+    </button>
+    <button class="nav-btn active" onclick="">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      Cargos
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-lei')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Lei
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-info')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Sobre
+    </button>
+  </nav>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SCREEN 3 — ASSEMBLEIA DE FREGUESIA
+══════════════════════════════════════ -->
+<div class="screen" id="screen-af">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </button>
+      <div>
+        <div class="topbar-title">🏛️ Assembleia de Freguesia</div>
+        <div class="topbar-sub">Sessões, intervenções e fiscalização</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cargo-screen-body">
+    <div class="section-label">O que devo fazer quando…</div>
+
+    <div class="situation" id="af-1">
+      <div class="sit-header" onclick="toggleSit('af-1')">
+        <div class="sit-emoji">📅</div>
+        <div class="sit-body">
+          <div class="sit-tag blue">Sessões</div>
+          <div class="sit-title">Tenho uma sessão da Assembleia de Freguesia</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num blue">1</div><div class="step-text"><strong>Lê a ordem do dia</strong> assim que receberes a convocatória. Identifica os pontos onde podes intervir.</div></li>
+          <li class="step-item"><div class="step-num blue">2</div><div class="step-text"><strong>Estuda os documentos</strong> a aprovar — orçamento, plano, relatórios. Não aproves o que não entendes.</div></li>
+          <li class="step-item"><div class="step-num blue">3</div><div class="step-text"><strong>Prepara pelo menos uma intervenção</strong> por sessão. Sobre um tema relevante para a freguesia.</div></li>
+          <li class="step-item"><div class="step-num blue">4</div><div class="step-text"><strong>Vota e regista a tua posição.</strong> A ata fica para a história — a abstenção também conta.</div></li>
+        </ul>
+        <div class="law-box">📖 <span><strong>Lei 75/2013, art. 8.º —</strong> A Assembleia reúne ordinariamente 4 vezes por ano. Pode reunir extraordinariamente por convocatória de 1/3 dos membros.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="af-2">
+      <div class="sit-header" onclick="toggleSit('af-2')">
+        <div class="sit-emoji">🔍</div>
+        <div class="sit-body">
+          <div class="sit-tag blue">Fiscalização</div>
+          <div class="sit-title">Quero fiscalizar a ação da Junta</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num blue">1</div><div class="step-text"><strong>Pede informação por escrito</strong> ao Presidente da Junta. Tens direito a qualquer documento relacionado com a gestão.</div></li>
+          <li class="step-item"><div class="step-num blue">2</div><div class="step-text"><strong>Analisa a execução orçamental</strong> — o que foi orçamentado vs. o que foi gasto. Desvios significativos merecem explicação.</div></li>
+          <li class="step-item"><div class="step-num blue">3</div><div class="step-text"><strong>Apresenta recomendações</strong> — instrumento formal para propor melhorias sem bloquear a governação.</div></li>
+          <li class="step-item"><div class="step-num blue">4</div><div class="step-text"><strong>Usa a palavra na sessão</strong> para questionar, não para obstruir. Fiscalização eficaz é fundamentada, não é ruído.</div></li>
+        </ul>
+        <div class="tip-box">💡 <span>Fiscalizar com dados concretos é muito mais eficaz do que fiscalizar com emoção.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="af-3">
+      <div class="sit-header" onclick="toggleSit('af-3')">
+        <div class="sit-emoji">📝</div>
+        <div class="sit-body">
+          <div class="sit-tag blue">Propostas</div>
+          <div class="sit-title">Quero apresentar uma proposta ou moção</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num blue">1</div><div class="step-text"><strong>Verifica o regimento</strong> — prazos de apresentação de propostas antes da sessão.</div></li>
+          <li class="step-item"><div class="step-num blue">2</div><div class="step-text"><strong>Estrutura a proposta:</strong> exposição de motivos, proposta concreta e efeitos esperados.</div></li>
+          <li class="step-item"><div class="step-num blue">3</div><div class="step-text"><strong>Apresenta por escrito</strong> à Mesa da Assembleia antes da sessão.<em>Propostas verbais têm menos força.</em></div></li>
+          <li class="step-item"><div class="step-num blue">4</div><div class="step-text"><strong>Defende na sessão</strong> de forma clara e concisa. 2 minutos bem usados bastam.</div></li>
+        </ul>
+        <div class="tip-box">💡 <span>Uma proposta concreta, com dados reais e linguagem simples, tem mais hipótese de aprovação do que um texto longo e técnico.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="af-4">
+      <div class="sit-header" onclick="toggleSit('af-4')">
+        <div class="sit-emoji">✅</div>
+        <div class="sit-body">
+          <div class="sit-tag blue">Votações</div>
+          <div class="sit-title">Vou votar o orçamento ou o plano de atividades</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num blue">1</div><div class="step-text"><strong>Lê o documento com antecedência.</strong> Pede esclarecimentos antes da sessão, não durante.</div></li>
+          <li class="step-item"><div class="step-num blue">2</div><div class="step-text"><strong>Verifica se as prioridades do documento</strong> refletem as necessidades reais da freguesia.</div></li>
+          <li class="step-item"><div class="step-num blue">3</div><div class="step-text"><strong>Vota com consciência:</strong> o orçamento é o instrumento mais importante da governação local.</div></li>
+          <li class="step-item"><div class="step-num blue">4</div><div class="step-text"><strong>Regista declaração de voto</strong> se discordares — fica em ata e serve de posição política futura.</div></li>
+        </ul>
+        <div class="law-box">📖 <span><strong>Lei 75/2013 —</strong> O orçamento deve ser aprovado até 31 de dezembro. Sem aprovação, prorroga-se o do ano anterior por duodécimos.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn" onclick="goTo('screen-home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Início
+    </button>
+    <button class="nav-btn active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      Cargos
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-lei')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Lei
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-info')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Sobre
+    </button>
+  </nav>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SCREEN 4 — VOGAL
+══════════════════════════════════════ -->
+<div class="screen" id="screen-vogal">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </button>
+      <div>
+        <div class="topbar-title">🤝 Vogal da Junta</div>
+        <div class="topbar-sub">Pelouros e apoio à presidência</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cargo-screen-body">
+    <div class="section-label">O que devo fazer quando…</div>
+
+    <div class="situation" id="vg-1">
+      <div class="sit-header" onclick="toggleSit('vg-1')">
+        <div class="sit-emoji">📌</div>
+        <div class="sit-body">
+          <div class="sit-tag green">Pelouros</div>
+          <div class="sit-title">Fui responsável por um pelouro — como funciona?</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num green">1</div><div class="step-text"><strong>O pelouro é delegado pelo Presidente</strong> — tens autonomia de execução, mas a responsabilidade final é do Presidente.</div></li>
+          <li class="step-item"><div class="step-num green">2</div><div class="step-text"><strong>Define prioridades para o teu pelouro</strong> em conjunto com o Presidente no início do mandato.</div></li>
+          <li class="step-item"><div class="step-num green">3</div><div class="step-text"><strong>Reporta regularmente</strong> ao Presidente o estado das ações. Sem surpresas.</div></li>
+          <li class="step-item"><div class="step-num green">4</div><div class="step-text"><strong>Nas reuniões de junta,</strong> apresentas os pontos do teu pelouro quando necessário.</div></li>
+        </ul>
+        <div class="tip-box">💡 <span>Pelouro delegado não é pelouro esquecido pelo Presidente. Mantém comunicação regular.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="vg-2">
+      <div class="sit-header" onclick="toggleSit('vg-2')">
+        <div class="sit-emoji">🙋</div>
+        <div class="sit-body">
+          <div class="sit-tag green">Participação</div>
+          <div class="sit-title">Como posso contribuir ativamente nas reuniões?</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num green">1</div><div class="step-text"><strong>Prepara sempre a ordem do dia.</strong> Um vogal informado é um vogal útil.</div></li>
+          <li class="step-item"><div class="step-num green">2</div><div class="step-text"><strong>Partilha informação de campo</strong> — o que ouves e vês na freguesia é um recurso valioso para as decisões da Junta.</div></li>
+          <li class="step-item"><div class="step-num green">3</div><div class="step-text"><strong>Vota com posição fundamentada.</strong> A abstenção sem justificação é uma oportunidade perdida.</div></li>
+          <li class="step-item"><div class="step-num green">4</div><div class="step-text"><strong>Substitui o Presidente</strong> quando necessário, na ordem definida internamente.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="situation" id="vg-3">
+      <div class="sit-header" onclick="toggleSit('vg-3')">
+        <div class="sit-emoji">📞</div>
+        <div class="sit-body">
+          <div class="sit-tag green">Atendimento</div>
+          <div class="sit-title">Um munícipe contacta-me diretamente a mim</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num green">1</div><div class="step-text"><strong>Ouve e regista.</strong> Mesmo que não sejas o responsável, a tua resposta representa a Junta.</div></li>
+          <li class="step-item"><div class="step-num green">2</div><div class="step-text"><strong>Se for do teu pelouro:</strong> responde e age. Se não for: encaminha ao Presidente com a informação do munícipe.</div></li>
+          <li class="step-item"><div class="step-num green">3</div><div class="step-text"><strong>Informa o munícipe</strong> de que o assunto será tratado. Dá um prazo realista.</div></li>
+        </ul>
+        <div class="tip-box">💡 <span>Um vogal acessível e responsivo vale tanto como uma obra concluída na percepção do munícipe.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn" onclick="goTo('screen-home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Início
+    </button>
+    <button class="nav-btn active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      Cargos
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-lei')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Lei
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-info')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Sobre
+    </button>
+  </nav>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SCREEN 5 — RELAÇÃO COM A CM
+══════════════════════════════════════ -->
+<div class="screen" id="screen-cm">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </button>
+      <div>
+        <div class="topbar-title">🔗 Relação com a Câmara</div>
+        <div class="topbar-sub">Como pedir, comunicar e escalar</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cargo-screen-body">
+    <div class="section-label">O que devo fazer quando…</div>
+
+    <div class="situation" id="cm-1">
+      <div class="sit-header" onclick="toggleSit('cm-1')">
+        <div class="sit-emoji">✉️</div>
+        <div class="sit-body">
+          <div class="sit-tag">Comunicação</div>
+          <div class="sit-title">Preciso de pedir algo à Câmara Municipal</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Faz sempre por escrito</strong> — ofício ou email formal com referência, data e assinatura do Presidente de Junta.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Sê específico:</strong> o quê, onde, quando e porquê é urgente. Evita generalidades.</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Pede sempre acuse de receção</strong> e prazo de resposta esperado.</div></li>
+          <li class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Faz seguimento</strong> após 10 dias úteis sem resposta — novo email ou contacto telefónico documentado.</div></li>
+        </ul>
+        <div class="tip-box">💡 <span>Um pedido verbal não existe. Um pedido escrito com número de ofício é tratado como urgência institucional.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="cm-2">
+      <div class="sit-header" onclick="toggleSit('cm-2')">
+        <div class="sit-emoji">⚡</div>
+        <div class="sit-body">
+          <div class="sit-tag">Escalamento</div>
+          <div class="sit-title">A Câmara não responde ou não resolve</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Documenta todo o histórico:</strong> datas dos pedidos, meios usados, respostas recebidas.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Escala ao Presidente da Câmara</strong> por escrito, com cópia do histórico de pedidos anteriores.</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Usa a Assembleia Municipal</strong> como espaço de pressão — o teu representante na AM pode colocar a questão em sessão.</div></li>
+          <li class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Comunica à população</strong> de forma factual o que foi pedido e o que não foi resolvido. Sem alarmismo, com factos.</div></li>
+        </ul>
+        <div class="tip-box">💡 <span>Escalamento com documentação é muito mais eficaz do que pressão sem provas. Os factos são o teu maior aliado.</span></div>
+      </div>
+    </div>
+
+    <div class="situation" id="cm-3">
+      <div class="sit-header" onclick="toggleSit('cm-3')">
+        <div class="sit-emoji">🤝</div>
+        <div class="sit-body">
+          <div class="sit-tag">Articulação</div>
+          <div class="sit-title">Quero articular melhor com os serviços da Câmara</div>
+        </div>
+        <div class="sit-arrow">›</div>
+      </div>
+      <div class="sit-content">
+        <ul class="steps-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Identifica o teu interlocutor</strong> em cada divisão da Câmara — Obras, Ação Social, Ambiente, etc.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Mantém contacto regular,</strong> não só quando há problemas. Relações de trabalho facilitam a resolução.</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Participa nas reuniões</strong> de articulação quando convocado. A presença é sinal de comprometimento.</div></li>
+        </ul>
+        <div class="law-box">📖 <span><strong>Lei 75/2013, art. 132.º —</strong> A Câmara Municipal pode delegar competências nas Juntas de Freguesia mediante acordo de execução.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn" onclick="goTo('screen-home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Início
+    </button>
+    <button class="nav-btn active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      Cargos
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-lei')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Lei
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-info')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Sobre
+    </button>
+  </nav>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SCREEN 6 — LEI
+══════════════════════════════════════ -->
+<div class="screen" id="screen-lei">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </button>
+      <div>
+        <div class="topbar-title">📖 Referências Legais</div>
+        <div class="topbar-sub">O essencial que um autarca precisa de saber</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-body">
+    <div class="info-card">
+      <div class="info-card-header">
+        <span style="font-size:20px">⚖️</span>
+        <h3>Lei 75/2013 — Regime Jurídico das Autarquias</h3>
+      </div>
+      <div class="info-card-body">
+        <strong>O que regula:</strong> competências dos órgãos municipais e de freguesia, funcionamento das assembleias, eleição e destituição de titulares.<br><br>
+        <strong>Art. 8.º —</strong> A Assembleia de Freguesia reúne ordinariamente 4 vezes por ano.<br><br>
+        <strong>Art. 16.º —</strong> A Junta tem competência para emitir atestados, declarações e certidões.<br><br>
+        <strong>Art. 24.º —</strong> O Presidente convoca e preside às reuniões da Junta.<br><br>
+        <strong>Art. 132.º —</strong> A Câmara pode delegar competências nas Juntas mediante acordo de execução.
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header">
+        <span style="font-size:20px">💰</span>
+        <h3>Código dos Contratos Públicos (CCP)</h3>
+      </div>
+      <div class="info-card-body">
+        <strong>Limiares de contratação:</strong><br><br>
+        • Até <strong>€20.000</strong> — ajuste direto simplificado<br>
+        • De €20.001 a <strong>€75.000</strong> — consulta prévia (mínimo 3 propostas)<br>
+        • Acima de <strong>€75.000</strong> — concurso público obrigatório<br><br>
+        <strong>Regra de ouro:</strong> toda a despesa exige documento de suporte. Sem fatura ou recibo, sem pagamento.
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header">
+        <span style="font-size:20px">📊</span>
+        <h3>Lei das Finanças Locais (Lei 73/2013)</h3>
+      </div>
+      <div class="info-card-body">
+        <strong>O que regula:</strong> receitas e despesas das autarquias, transferências do Estado, limites de endividamento.<br><br>
+        <strong>Orçamento:</strong> deve ser aprovado até 31 de dezembro. Se não aprovado, prorroga-se o anterior por duodécimos.<br><br>
+        <strong>Princípios:</strong> equilíbrio, anualidade, especificação, publicidade e transparência.
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header">
+        <span style="font-size:20px">🏗️</span>
+        <h3>RJUE — Regime Jurídico da Urbanização e Edificação</h3>
+      </div>
+      <div class="info-card-body">
+        <strong>O que regula:</strong> licenciamento de obras, comunicações prévias, operações urbanísticas.<br><br>
+        <strong>Competência da Câmara</strong> — as Juntas não licenciam obras, mas são o primeiro ponto de contacto e encaminhamento dos munícipes.
+      </div>
+    </div>
+
+    <div class="version-tag">PSD Montalegre · Versão Demo 2026<br>As referências legais têm caráter informativo. Consulta sempre assessoria jurídica para casos concretos.</div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn" onclick="goTo('screen-home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Início
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-pj')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      Cargos
+    </button>
+    <button class="nav-btn active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Lei
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-info')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Sobre
+    </button>
+  </nav>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SCREEN 7 — SOBRE
+══════════════════════════════════════ -->
+<div class="screen" id="screen-info">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </button>
+      <div>
+        <div class="topbar-title">Sobre esta aplicação</div>
+        <div class="topbar-sub">PSD Montalegre · Guia do Autarca</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-body">
+    <div class="info-card">
+      <div class="info-card-header">
+        <span style="font-size:20px">🎯</span>
+        <h3>Objetivo</h3>
+      </div>
+      <div class="info-card-body">
+        Este guia foi desenvolvido para apoiar os elementos das Juntas de Freguesia do PSD Montalegre no seu trabalho diário. O objetivo é simples: <strong>encontrar a resposta certa, no menor tempo possível.</strong><br><br>
+        Organizado por cargo e por situações concretas — não por capítulos de manual.
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header">
+        <span style="font-size:20px">📱</span>
+        <h3>Como usar</h3>
+      </div>
+      <div class="info-card-body">
+        <strong>1.</strong> Escolhe o teu cargo na página inicial.<br><br>
+        <strong>2.</strong> Encontra a situação que tens em mãos.<br><br>
+        <strong>3.</strong> Segue os passos — são práticos, legais e testados.<br><br>
+        <strong>4.</strong> Usa a pesquisa para temas específicos.
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header">
+        <span style="font-size:20px">🔄</span>
+        <h3>Versão Demo</h3>
+      </div>
+      <div class="info-card-body">
+        Esta é a versão de demonstração. A versão completa, disponível no domínio oficial do PSD Montalegre, incluirá:<br><br>
+        • Mais situações e cenários por cargo<br>
+        • Modelos de documentos para download<br>
+        • Contactos dos serviços da Câmara Municipal<br>
+        • Atualizações legislativas automáticas
+      </div>
+    </div>
+
+    <div class="version-tag">
+      <strong style="color:var(--o)">↑PSD Montalegre</strong><br>
+      Guia do Autarca · Versão Demo 1.0 · 2026<br>
+      Partido Social Democrata · Uso interno
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn" onclick="goTo('screen-home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Início
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-pj')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      Cargos
+    </button>
+    <button class="nav-btn" onclick="goTo('screen-lei')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Lei
+    </button>
+    <button class="nav-btn active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Sobre
+    </button>
+  </nav>
+</div>
+
+
+<script>
+const allSituations = [
+  { id:'pj-1', cargo:'Presidente de Junta', color:'', title:'Um munícipe vem queixar-se de um problema', screen:'screen-pj' },
+  { id:'pj-2', cargo:'Presidente de Junta', color:'', title:'Tenho de preparar e conduzir uma reunião de junta', screen:'screen-pj' },
+  { id:'pj-3', cargo:'Presidente de Junta', color:'', title:'Há uma obra ou reparação urgente na freguesia', screen:'screen-pj' },
+  { id:'pj-4', cargo:'Presidente de Junta', color:'', title:'Preciso de gerir o orçamento da junta', screen:'screen-pj' },
+  { id:'pj-5', cargo:'Presidente de Junta', color:'', title:'Quero comunicar melhor com a população', screen:'screen-pj' },
+  { id:'pj-6', cargo:'Presidente de Junta', color:'', title:'Preciso de emitir certidões ou atestados', screen:'screen-pj' },
+  { id:'af-1', cargo:'Assembleia de Freguesia', color:'blue', title:'Tenho uma sessão da Assembleia de Freguesia', screen:'screen-af' },
+  { id:'af-2', cargo:'Assembleia de Freguesia', color:'blue', title:'Quero fiscalizar a ação da Junta', screen:'screen-af' },
+  { id:'af-3', cargo:'Assembleia de Freguesia', color:'blue', title:'Quero apresentar uma proposta ou moção', screen:'screen-af' },
+  { id:'af-4', cargo:'Assembleia de Freguesia', color:'blue', title:'Vou votar o orçamento ou o plano de atividades', screen:'screen-af' },
+  { id:'vg-1', cargo:'Vogal da Junta', color:'green', title:'Fui responsável por um pelouro — como funciona?', screen:'screen-vogal' },
+  { id:'vg-2', cargo:'Vogal da Junta', color:'green', title:'Como posso contribuir ativamente nas reuniões?', screen:'screen-vogal' },
+  { id:'vg-3', cargo:'Vogal da Junta', color:'green', title:'Um munícipe contacta-me diretamente a mim', screen:'screen-vogal' },
+  { id:'cm-1', cargo:'Relação com a Câmara', color:'', title:'Preciso de pedir algo à Câmara Municipal', screen:'screen-cm' },
+  { id:'cm-2', cargo:'Relação com a Câmara', color:'', title:'A Câmara não responde ou não resolve', screen:'screen-cm' },
+  { id:'cm-3', cargo:'Relação com a Câmara', color:'', title:'Quero articular melhor com os serviços da Câmara', screen:'screen-cm' },
+  { id:'urg-1', cargo:'Urgente', color:'', title:'Um munícipe tem uma situação de emergência', screen:'screen-home' },
+  { id:'urg-2', cargo:'Urgente', color:'', title:'Tenho uma reunião amanhã e não sei como preparar', screen:'screen-home' },
+];
+
+let history = ['screen-home'];
+
+function goTo(screenId) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(screenId).classList.add('active');
+  window.scrollTo(0, 0);
+  if (history[history.length - 1] !== screenId) history.push(screenId);
+}
+
+function goBack() {
+  history.pop();
+  const prev = history[history.length - 1] || 'screen-home';
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(prev).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function toggleSit(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.situation.open').forEach(s => { if (s.id !== id) s.classList.remove('open'); });
+  el.classList.toggle('open', !wasOpen);
+  if (!wasOpen) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+}
+
+const searchInput = document.getElementById('homeSearch');
+const searchResults = document.getElementById('searchResults');
+const homeDefault = document.getElementById('homeDefault');
+const searchClear = document.getElementById('searchClear');
+
+searchInput.addEventListener('input', function() {
+  const q = this.value.trim().toLowerCase();
+  searchClear.classList.toggle('visible', q.length > 0);
+
+  if (!q) {
+    searchResults.classList.remove('visible');
+    homeDefault.style.display = '';
+    return;
+  }
+
+  const matches = allSituations.filter(s =>
+    s.title.toLowerCase().includes(q) ||
+    s.cargo.toLowerCase().includes(q)
+  );
+
+  homeDefault.style.display = 'none';
+  searchResults.classList.add('visible');
+
+  if (matches.length === 0) {
+    searchResults.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>Sem resultados.<br>Tenta: queixa, reunião, orçamento, obras…</p></div>';
+    return;
+  }
+
+  searchResults.innerHTML = matches.map(s => `
+    <div class="result-item ${s.color}" onclick="goToAndOpen('${s.screen}', '${s.id}')">
+      <div class="result-cargo">${s.cargo}</div>
+      <div class="result-title">${s.title}</div>
+    </div>
+  `).join('');
+});
+
+function clearSearch() {
+  searchInput.value = '';
+  searchClear.classList.remove('visible');
+  searchResults.classList.remove('visible');
+  searchResults.innerHTML = '';
+  homeDefault.style.display = '';
+}
+
+function goToAndOpen(screenId, sitId) {
+  goTo(screenId);
+  clearSearch();
+  setTimeout(() => {
+    toggleSit(sitId);
+    const el = document.getElementById(sitId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 80);
+}
+</script>
+</body>
+</html>
