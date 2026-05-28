@@ -181,6 +181,7 @@ body{font-family:var(--font);color:var(--blk)}
   <div class="topbar"><div class="topbar-inner">
     <div class="tlogo">PSD</div><div class="tdiv"></div>
     <div class="tcopy"><div class="ttitle">Guia do Autarca</div><div class="tsub">PSD Montalegre</div></div>
+    <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
     <div class="banner">
@@ -221,6 +222,7 @@ body{font-family:var(--font);color:var(--blk)}
   <div class="topbar"><div class="topbar-inner">
     <button class="back" onclick="goBack()">‹</button>
     <div class="tcopy"><div class="ttitle">📋 Assembleia de Freguesia</div><div class="tsub">Os teus direitos como oposição</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
     <div class="banner">
@@ -427,6 +429,7 @@ body{font-family:var(--font);color:var(--blk)}
   <div class="topbar"><div class="topbar-inner">
     <button class="back" onclick="goBack()">‹</button>
     <div class="tcopy"><div class="ttitle">🪑 Presidente da Assembleia</div><div class="tsub">Conduzir sessões com rigor</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
     <div class="banner">
@@ -510,6 +513,7 @@ body{font-family:var(--font);color:var(--blk)}
   <div class="topbar"><div class="topbar-inner">
     <button class="back" onclick="goBack()">‹</button>
     <div class="tcopy"><div class="ttitle">👤 Presidente de Junta</div><div class="tsub">Competências e obrigações</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
     <div class="slabel">O que devo fazer quando…</div>
@@ -559,6 +563,7 @@ body{font-family:var(--font);color:var(--blk)}
   <div class="topbar"><div class="topbar-inner">
     <button class="back" onclick="goBack()">‹</button>
     <div class="tcopy"><div class="ttitle">🤝 Membro da Junta</div><div class="tsub">O teu papel no executivo</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
     <div class="slabel">O que devo fazer</div>
@@ -593,6 +598,7 @@ body{font-family:var(--font);color:var(--blk)}
   <div class="topbar"><div class="topbar-inner">
     <button class="back" onclick="goBack()">‹</button>
     <div class="tcopy"><div class="ttitle">📖 Aprender</div><div class="tsub">Perceber como tudo funciona</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
     <div class="banner">
@@ -698,6 +704,7 @@ body{font-family:var(--font);color:var(--blk)}
   <div class="topbar"><div class="topbar-inner">
     <button class="back" onclick="goBack()">‹</button>
     <div class="tcopy"><div class="ttitle">📞 Contactos</div><div class="tsub">Estrutura PSD Montalegre</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
     <div style="background:var(--o-bg);border-left:3px solid var(--o);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:10px 12px;font-size:12px;color:var(--o2);line-height:1.6;margin-bottom:14px">Em caso de dúvida ou situação urgente, contacta directamente a estrutura concelhia.</div>
@@ -727,6 +734,7 @@ body{font-family:var(--font);color:var(--blk)}
       </div>
     </div>
     <div style="text-align:center;padding:20px 0;font-size:11px;color:var(--g400)">PSD Montalegre · Guia do Autarca · Demo</div>
+
   </div>
   <nav class="bottom-nav">
     <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
@@ -778,6 +786,15 @@ function tog(id){
 // Auto-login se já autenticou antes
 if(localStorage.getItem('psd_auth')==='1'){
   goTo('s-cargo');
+}
+
+function doLogout(){
+  if(confirm('Tens a certeza que queres sair?')){
+    localStorage.removeItem('psd_auth');
+    document.getElementById('pwdInput').value='';
+    hist=['s-splash'];
+    goTo('s-splash');
+  }
 }
 
 // Registar service worker
