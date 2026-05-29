@@ -175,11 +175,13 @@ body{font-family:var(--font);color:var(--blk)}
   </div>
   <div class="login-body">
     <div class="login-card">
+      <label class="lbl">Email</label>
+      <input class="linput" type="email" id="emailInput" placeholder="O teu email" autocomplete="email" style="margin-bottom:12px" onkeydown="if(event.key==='Enter')document.getElementById('pwdInput').focus()">
       <label class="lbl">Código de acesso</label>
-      <input class="linput" type="password" id="pwdInput" placeholder="Introduz o código" onkeydown="if(event.key==='Enter')doLogin()">
+      <input class="linput" type="password" id="pwdInput" placeholder="Código enviado pelo PSD" onkeydown="if(event.key==='Enter')doLogin()">
       <button class="lbtn" onclick="doLogin()">Entrar</button>
-      <div class="lerr" id="loginErr">❌ Código incorrecto. Contacta o José Pedro Correia.</div>
-      <div class="lhint">Não sabes o código?<br>Liga para 917 708 605</div>
+      <div class="lerr" id="loginErr">❌ Email ou código incorrecto. Contacta o José Pedro Correia.</div>
+      <div class="lhint">Não sabes o teu código?<br>Liga para 917 708 605</div>
     </div>
   </div>
 </div>
@@ -788,39 +790,41 @@ function goBack(){
 var API_URL='https://psd-guia-backend-production.up.railway.app';
 
 async function doLogin(){
-  var v=document.getElementById('pwdInput').value.trim();
+  var email=document.getElementById('emailInput').value.trim().toLowerCase();
+  var code=document.getElementById('pwdInput').value.trim();
   var err=document.getElementById('loginErr');
   var btn=document.querySelector('.lbtn');
-  if(!v){err.style.display='block';err.textContent='❌ Introduz o código de acesso.';return;}
+  if(!email||!code){err.style.display='block';err.textContent='❌ Preenche o email e o código.';return;}
   btn.textContent='A entrar...';btn.disabled=true;
   try{
-    var res=await fetch(API_URL+'/api/auth/login',{
+    var res=await fetch(API_URL+'/auth/login',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       credentials:'include',
-      body:JSON.stringify({email:'autarca@psd.pt',password:v})
+      body:JSON.stringify({email:email,password:code})
     });
     if(res.ok){
       var data=await res.json();
       err.style.display='none';
       localStorage.setItem('psd_auth','1');
       localStorage.setItem('psd_name', data.user ? data.user.name : '');
+      localStorage.setItem('psd_email', email);
       goTo('s-cargo');
     } else {
       err.style.display='block';
-      err.textContent='❌ Código incorrecto. Contacta o José Pedro Correia.';
+      err.textContent='❌ Email ou código incorrecto. Contacta o José Pedro Correia.';
       document.getElementById('pwdInput').value='';
       document.getElementById('pwdInput').focus();
     }
   } catch(e){
-    // fallback para password local se API não disponível
-    if(v==='montalegre2026'){
+    // fallback se API não disponível
+    if(code==='montalegre2026'){
       err.style.display='none';
       localStorage.setItem('psd_auth','1');
       goTo('s-cargo');
     } else {
       err.style.display='block';
-      err.textContent='❌ Erro de ligação. Tenta novamente.';
+      err.textContent='❌ Erro de ligação. Tenta novamente ou usa o código de emergência.';
     }
   }
   btn.textContent='Entrar';btn.disabled=false;
@@ -841,7 +845,7 @@ if(localStorage.getItem('psd_auth')==='1'){
 
 async function doLogout(){
   if(confirm('Tens a certeza que queres sair?')){
-    try{ await fetch(API_URL+'/api/auth/logout',{method:'POST',credentials:'include'}); }catch(e){}
+    try{ await fetch(API_URL+'/auth/logout',{method:'POST',credentials:'include'}); }catch(e){}
     localStorage.removeItem('psd_auth');
     localStorage.removeItem('psd_name');
     document.getElementById('pwdInput').value='';
