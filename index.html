@@ -227,7 +227,9 @@ body{font-family:var(--font);color:var(--blk)}
   </div>
   <nav class="bottom-nav">
     <button class="nb active" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
+    <button class="nb" onclick="goTo('s-af')"><div class="nb-i">📋</div>Assembleia</button>
     <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb" onclick="goTo('s-com')"><div class="nb-i">📣</div>Comunicar</button>
     <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
@@ -435,6 +437,7 @@ body{font-family:var(--font);color:var(--blk)}
     <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
     <button class="nb active"><div class="nb-i">📋</div>Assembleia</button>
     <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb" onclick="goTo('s-com')"><div class="nb-i">📣</div>Comunicar</button>
     <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
@@ -519,6 +522,7 @@ body{font-family:var(--font);color:var(--blk)}
     <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
     <button class="nb active"><div class="nb-i">🪑</div>Mesa</button>
     <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb" onclick="goTo('s-com')"><div class="nb-i">📣</div>Comunicar</button>
     <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
@@ -569,6 +573,7 @@ body{font-family:var(--font);color:var(--blk)}
     <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
     <button class="nb active"><div class="nb-i">👤</div>Junta</button>
     <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb" onclick="goTo('s-com')"><div class="nb-i">📣</div>Comunicar</button>
     <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
@@ -604,6 +609,7 @@ body{font-family:var(--font);color:var(--blk)}
     <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
     <button class="nb active"><div class="nb-i">🤝</div>Junta</button>
     <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb" onclick="goTo('s-com')"><div class="nb-i">📣</div>Comunicar</button>
     <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
@@ -710,6 +716,188 @@ body{font-family:var(--font);color:var(--blk)}
     <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
     <button class="nb" onclick="goTo('s-af')"><div class="nb-i">📋</div>Assembleia</button>
     <button class="nb active"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb" onclick="goTo('s-com')"><div class="nb-i">📣</div>Comunicar</button>
+    <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
+  </nav>
+</div>
+
+<!-- ══════ COMUNICAR ══════ -->
+<div class="screen" id="s-com">
+  <div class="topbar">
+    <button class="back" onclick="goBack()">‹</button>
+    <div class="tcopy"><div class="ttitle">📣 Comunicar</div><div class="tsub">Como falar com a população</div></div>
+    <button class="pbtn" onclick="printScreen()"><i class="ti ti-printer" aria-hidden="true"></i><span>Imprimir</span></button>
+    <button class="tbtn" onclick="doLogout()">Sair</button>
+  </div>
+  <div class="body">
+    <div class="banner"><div style="font-size:20px;flex-shrink:0">📣</div><div class="banner-text"><strong>Comunicar é governar.</strong>Quem não comunica o que faz, cede o espaço político à maioria. Depois de cada sessão — comunica.</div></div>
+
+    <div class="slabel">1. Regras básicas</div>
+    <div class="card" id="c-regras">
+      <div class="card-hdr" onclick="tog('c-regras')"><div class="card-emoji">📐</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Princípios</div><div class="card-title">As 5 regras de ouro da comunicação política</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div style="background:var(--g100);border-radius:var(--r-sm);padding:10px;margin-bottom:8px;display:flex;gap:10px"><div style="font-size:16px;flex-shrink:0">📊</div><div><div style="font-size:12px;font-weight:700;color:var(--blk);margin-bottom:2px">Usa factos e números</div><div style="font-size:11px;color:var(--g600);line-height:1.5">"A junta gastou €3.200 em X sem concurso" é mais forte do que "a junta gere mal".</div></div></div>
+        <div style="background:var(--g100);border-radius:var(--r-sm);padding:10px;margin-bottom:8px;display:flex;gap:10px"><div style="font-size:16px;flex-shrink:0">🎯</div><div><div style="font-size:12px;font-weight:700;color:var(--blk);margin-bottom:2px">Critica a decisão, não as pessoas</div><div style="font-size:11px;color:var(--g600);line-height:1.5">"Esta obra não estava orçamentada" é melhor do que "o presidente é incompetente".</div></div></div>
+        <div style="background:var(--g100);border-radius:var(--r-sm);padding:10px;margin-bottom:8px;display:flex;gap:10px"><div style="font-size:16px;flex-shrink:0">⏰</div><div><div style="font-size:12px;font-weight:700;color:var(--blk);margin-bottom:2px">Publica logo após a sessão</div><div style="font-size:11px;color:var(--g600);line-height:1.5">O impacto cai rapidamente. Publica nas 24h seguintes — de preferência no mesmo dia.</div></div></div>
+        <div style="background:var(--g100);border-radius:var(--r-sm);padding:10px;margin-bottom:8px;display:flex;gap:10px"><div style="font-size:16px;flex-shrink:0">💬</div><div><div style="font-size:12px;font-weight:700;color:var(--blk);margin-bottom:2px">Responde sempre a comentários</div><div style="font-size:11px;color:var(--g600);line-height:1.5">Um comentário sem resposta parece uma derrota. Responde com factos, sem agressividade.</div></div></div>
+        <div style="background:var(--g100);border-radius:var(--r-sm);padding:10px;display:flex;gap:10px"><div style="font-size:16px;flex-shrink:0">🔄</div><div><div style="font-size:12px;font-weight:700;color:var(--blk);margin-bottom:2px">Sê consistente</div><div style="font-size:11px;color:var(--g600);line-height:1.5">Uma publicação por sessão, sempre. A consistência constrói credibilidade ao longo do mandato.</div></div></div>
+      </div>
+    </div>
+
+    <div class="slabel">2. No terreno — com os eleitores</div>
+    <div class="card" id="c-terreno1">
+      <div class="card-hdr" onclick="tog('c-terreno1')"><div class="card-emoji">🚶</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Presencial</div><div class="card-title">Alguém aborda-me com uma queixa ou problema</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Para e ouve até ao fim.</strong> Não interrompas, não defendas ninguém, não promettas logo.<em>A pessoa quer ser ouvida — isso já resolve metade.</em></div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Diz:</strong> "Percebo. Isso é importante. Deixa-me perceber o que posso fazer."<em>Não digas "vou resolver" se não tens a certeza.</em></div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Regista o problema</strong> no telemóvel — nome, aldeia, problema, data.<em>Uma queixa sem registo é uma queixa esquecida.</em></div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">4</div><div class="st"><strong>Dá um prazo realista:</strong> "Falo sobre isto na próxima reunião" ou "Vou informar-me e dou-te notícias em X dias".</div></li>
+        </ul>
+        <div class="tip">💡 Nunca digas "não há nada a fazer" — diz sempre o que vais tentar fazer, mesmo que o resultado seja incerto.</div>
+      </div>
+    </div>
+
+    <div class="card" id="c-terreno2">
+      <div class="card-hdr" onclick="tog('c-terreno2')"><div class="card-emoji">🗳️</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Presencial</div><div class="card-title">Tenho de explicar uma votação a alguém que não percebe</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Usa linguagem simples e concreta.</strong><em>Em vez de "votámos contra por razões orçamentais" diz "votámos contra porque este gasto não estava planeado e não há dinheiro para isso".</em></div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Explica o que propuseste em alternativa.</strong> A oposição não é só dizer não — é dizer "não assim, mas propomos isto".</div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Se a pessoa discordar,</strong> aceita sem entrar em conflito.<em>"Percebo que vês de forma diferente. É normal não estarmos todos de acordo."</em></div></li>
+        </ul>
+        <div class="tip">💡 Nunca uses jargão legal ou político com pessoas simples. Se não consegues explicar em duas frases, ainda não percebeste bem o assunto tu próprio.</div>
+      </div>
+    </div>
+
+    <div class="card" id="c-terreno3">
+      <div class="card-hdr" onclick="tog('c-terreno3')"><div class="card-emoji">😤</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Presencial</div><div class="card-title">Alguém está irritado ou agressivo comigo</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Não respondas no mesmo tom.</strong> Quem fica calmo numa discussão tem sempre mais poder.</div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Diz:</strong> "Percebo que estás chateado. Tens razão em estar preocupado com isso."<em>Valida a emoção — não necessariamente a acusação.</em></div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Se a acusação for falsa,</strong> corrige com factos calmamente: "Isso não é exacto — o que aconteceu foi..."</div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">4</div><div class="st"><strong>Se escalar,</strong> termina educadamente: "Vejo que agora não é o melhor momento. Posso falar contigo quando estiveres mais tranquilo."</div></li>
+        </ul>
+        <div class="atencao">⚠️ Nunca discutas em público de forma agressiva — mesmo que tenhas razão, quem grita perde.</div>
+      </div>
+    </div>
+
+    <div class="card" id="c-terreno4">
+      <div class="card-hdr" onclick="tog('c-terreno4')"><div class="card-emoji">💬</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Presencial</div><div class="card-title">Frases úteis para situações difíceis</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div style="margin-bottom:10px"><div style="font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--g400);margin-bottom:6px">Quando não sabes a resposta</div><div style="background:var(--blue-bg);border-radius:var(--r-sm);padding:10px;font-size:12px;color:var(--blue);line-height:1.6;border-left:3px solid var(--blue)">"Não sei de cor, mas vou informar-me e dou-te resposta. Posso ter o teu contacto?"</div></div>
+        <div style="margin-bottom:10px"><div style="font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--g400);margin-bottom:6px">Quando não é da tua competência</div><div style="background:var(--blue-bg);border-radius:var(--r-sm);padding:10px;font-size:12px;color:var(--blue);line-height:1.6;border-left:3px solid var(--blue)">"Isso é responsabilidade da Câmara, não da Junta. Mas posso ajudar-te a fazer o pedido por escrito para teres uma resposta formal."</div></div>
+        <div style="margin-bottom:10px"><div style="font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--g400);margin-bottom:6px">Quando prometem que "o PSD não faz nada"</div><div style="background:var(--blue-bg);border-radius:var(--r-sm);padding:10px;font-size:12px;color:var(--blue);line-height:1.6;border-left:3px solid var(--blue)">"Na última sessão, o PSD propôs X e votou contra Y por causa de Z. Está tudo registado em ata — posso mostrar-te."</div></div>
+        <div><div style="font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--g400);margin-bottom:6px">Quando alguém quer que resolvas tudo já</div><div style="background:var(--blue-bg);border-radius:var(--r-sm);padding:10px;font-size:12px;color:var(--blue);line-height:1.6;border-left:3px solid var(--blue)">"Quero muito ajudar-te nisto. O que posso fazer já é levar este assunto à próxima reunião e garantir que fica registado. Combina?"</div></div>
+      </div>
+    </div>
+
+    <div class="slabel">3. Checklist pós-reunião</div>
+    <div class="card" id="c-check">
+      <div class="card-hdr" onclick="tog('c-check')"><div class="card-emoji">✅</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Checklist</div><div class="card-title">O que fazer depois de cada sessão</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div style="list-style:none">
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--g200);cursor:pointer" onclick="toggleChk(this)"><div style="width:20px;height:20px;border-radius:5px;border:1.5px solid var(--g200);background:white;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all 0.15s"></div><div><div style="font-size:12px;color:var(--blk);line-height:1.5">Tenho notas do que foi deliberado</div><div style="font-size:11px;color:var(--g400);margin-top:2px">Decisões, votações, resultados</div></div></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--g200);cursor:pointer" onclick="toggleChk(this)"><div style="width:20px;height:20px;border-radius:5px;border:1.5px solid var(--g200);background:white;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all 0.15s"></div><div><div style="font-size:12px;color:var(--blk);line-height:1.5">Registei como votei e porquê</div><div style="font-size:11px;color:var(--g400);margin-top:2px">Inclui declarações de voto</div></div></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--g200);cursor:pointer" onclick="toggleChk(this)"><div style="width:20px;height:20px;border-radius:5px;border:1.5px solid var(--g200);background:white;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all 0.15s"></div><div><div style="font-size:12px;color:var(--blk);line-height:1.5">Pedi a ata para verificar</div><div style="font-size:11px;color:var(--g400);margin-top:2px">As minhas intervenções estão registadas?</div></div></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--g200);cursor:pointer" onclick="toggleChk(this)"><div style="width:20px;height:20px;border-radius:5px;border:1.5px solid var(--g200);background:white;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all 0.15s"></div><div><div style="font-size:12px;color:var(--blk);line-height:1.5">Publiquei resumo no Facebook</div><div style="font-size:11px;color:var(--g400);margin-top:2px">O que foi discutido, aprovado e rejeitado</div></div></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--g200);cursor:pointer" onclick="toggleChk(this)"><div style="width:20px;height:20px;border-radius:5px;border:1.5px solid var(--g200);background:white;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all 0.15s"></div><div><div style="font-size:12px;color:var(--blk);line-height:1.5">Comuniquei à estrutura do PSD</div><div style="font-size:11px;color:var(--g400);margin-top:2px">Informei o José Pedro sobre situações relevantes</div></div></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;cursor:pointer" onclick="toggleChk(this)"><div style="width:20px;height:20px;border-radius:5px;border:1.5px solid var(--g200);background:white;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all 0.15s"></div><div><div style="font-size:12px;color:var(--blk);line-height:1.5">Identifiquei pontos para acompanhar</div><div style="font-size:11px;color:var(--g400);margin-top:2px">Promessas feitas, pedidos enviados, prazos</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slabel">4. Templates prontos a usar</div>
+    <div class="card" id="c-t1">
+      <div class="card-hdr" onclick="tog('c-t1')"><div class="card-emoji">📘</div><div class="card-b"><div class="card-tag" style="color:var(--blue)">Facebook</div><div class="card-title">Post após uma reunião</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div style="background:var(--g100);border-radius:var(--r-sm);padding:12px;margin-bottom:8px;border:0.5px solid var(--g200)">
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--o2);margin-bottom:8px">Copia, adapta e publica</div>
+          <div id="t1txt" style="font-size:11px;color:var(--blk);line-height:1.7;white-space:pre-line">📋 Assembleia de Freguesia de [FREGUESIA] — [DATA]
+
+Estive presente na sessão de hoje. Aqui fica o resumo:
+
+✅ [O que foi aprovado]
+
+❌ [O que votámos contra e porquê]
+
+🔍 Ficámos a aguardar resposta sobre: [pedido em aberto]
+
+O PSD estará sempre presente para garantir que os dinheiros públicos são bem geridos.
+
+#PSDMontalegre #[NomeDaFreguesia]</div>
+          <button onclick="copyTpl('t1txt',this)" style="background:var(--o);color:white;border:none;border-radius:var(--r-sm);padding:8px 14px;font-size:11px;font-weight:700;cursor:pointer;margin-top:10px;font-family:var(--font);width:100%">📋 Copiar template</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" id="c-t2">
+      <div class="card-hdr" onclick="tog('c-t2')"><div class="card-emoji">🗳️</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Declaração</div><div class="card-title">Comunicar uma declaração de voto</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div style="background:var(--g100);border-radius:var(--r-sm);padding:12px;margin-bottom:8px;border:0.5px solid var(--g200)">
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--o2);margin-bottom:8px">Copia, adapta e publica</div>
+          <div id="t2txt" style="font-size:11px;color:var(--blk);line-height:1.7;white-space:pre-line">Na sessão de [DATA] da Assembleia de Freguesia de [FREGUESIA], o PSD votou CONTRA a proposta de [TEMA].
+
+O motivo: [explicação simples — ex: "esta despesa não estava no orçamento aprovado"].
+
+Entendemos que [argumento alternativo].
+
+Esta posição ficou registada em ata.
+
+PSD Montalegre — na oposição para servir melhor.</div>
+          <button onclick="copyTpl('t2txt',this)" style="background:var(--o);color:white;border:none;border-radius:var(--r-sm);padding:8px 14px;font-size:11px;font-weight:700;cursor:pointer;margin-top:10px;font-family:var(--font);width:100%">📋 Copiar template</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" id="c-t3">
+      <div class="card-hdr" onclick="tog('c-t3')"><div class="card-emoji">⚡</div><div class="card-b"><div class="card-tag" style="color:var(--red)">Resposta</div><div class="card-title">Responder a um ataque político</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div style="background:var(--g100);border-radius:var(--r-sm);padding:12px;margin-bottom:8px;border:0.5px solid var(--g200)">
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--o2);margin-bottom:8px">Responde com factos — nunca com insultos</div>
+          <div id="t3txt" style="font-size:11px;color:var(--blk);line-height:1.7;white-space:pre-line">Em resposta ao comunicado de [QUEM]:
+
+Os factos são estes: [dado concreto — número, data, documento].
+
+Na sessão de [DATA], o PSD [o que propôs ou como votou]. Isso está registado em ata e é público.
+
+Preferimos falar com factos do que com adjectivos.
+
+PSD Montalegre</div>
+          <button onclick="copyTpl('t3txt',this)" style="background:var(--o);color:white;border:none;border-radius:var(--r-sm);padding:8px 14px;font-size:11px;font-weight:700;cursor:pointer;margin-top:10px;font-family:var(--font);width:100%">📋 Copiar template</button>
+        </div>
+        <div class="atencao">⚠️ Nunca respondas com insultos. Quem ataca pessoalmente perde sempre o debate.</div>
+      </div>
+    </div>
+    <div class="card" id="c-t4">
+      <div class="card-hdr" onclick="tog('c-t4')"><div class="card-emoji">✉️</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Ofício</div><div class="card-title">Pedir informação ao presidente da junta</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div style="background:var(--g100);border-radius:var(--r-sm);padding:12px;margin-bottom:8px;border:0.5px solid var(--g200)">
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--o2);margin-bottom:8px">Envia por email ou carta registada</div>
+          <div id="t4txt" style="font-size:11px;color:var(--blk);line-height:1.7;white-space:pre-line">Exmo. Sr. Presidente da Junta de Freguesia de [FREGUESIA],
+
+Ao abrigo do artigo 4.º da Lei n.º 24/98 (Estatuto do Direito de Oposição), venho solicitar os seguintes documentos:
+
+1. [Documento pedido — ex: mapa de execução orçamental]
+2. [Segundo pedido se houver]
+
+Solicito resposta no prazo de 10 dias úteis.
+
+Com os melhores cumprimentos,
+[Nome]
+Membro da Assembleia de Freguesia — PSD</div>
+          <button onclick="copyTpl('t4txt',this)" style="background:var(--o);color:white;border:none;border-radius:var(--r-sm);padding:8px 14px;font-size:11px;font-weight:700;cursor:pointer;margin-top:10px;font-family:var(--font);width:100%">📋 Copiar template</button>
+        </div>
+        <div class="tip">💡 Guarda sempre cópia do pedido com a data. Sem resposta em 10 dias — tens prova do incumprimento.</div>
+      </div>
+    </div>
+
+    <div class="disclaimer">⚠️ Apoio político e formativo. Não substitui assessoria jurídica especializada.</div>
+  </div>
+  <nav class="bottom-nav">
+    <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
+    <button class="nb" onclick="goTo('s-af')"><div class="nb-i">📋</div>Assembleia</button>
+    <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb active"><div class="nb-i">📣</div>Comunicar</button>
     <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
@@ -843,6 +1031,23 @@ if(localStorage.getItem('psd_auth')==='1'){
   goTo('s-cargo');
 }
 
+function copyTpl(id,btn){
+  var t=document.getElementById(id);
+  if(!t)return;
+  if(navigator.clipboard){navigator.clipboard.writeText(t.textContent);}
+  var orig=btn.textContent;
+  btn.textContent='✅ Copiado!';
+  btn.style.background='var(--green)';
+  setTimeout(function(){btn.textContent=orig;btn.style.background='var(--o)';},2000);
+}
+function toggleChk(el){
+  var box=el.querySelector('div');
+  var checked=box.style.background==='rgb(244, 121, 32)';
+  box.style.background=checked?'white':'var(--o)';
+  box.style.borderColor=checked?'var(--g200)':'var(--o)';
+  box.textContent=checked?'':'✓';
+  box.style.color='white';
+}
 async function doLogout(){
   if(confirm('Tens a certeza que queres sair?')){
     try{ await fetch(API_URL+'/auth/logout',{method:'POST',credentials:'include'}); }catch(e){}
