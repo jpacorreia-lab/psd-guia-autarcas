@@ -5,44 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Guia Autarca">
 <meta name="theme-color" content="#F47920">
 <title>Guia do Autarca · PSD Montalegre</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Guia Autarca">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
   --o:#F47920;--o2:#C9611A;--o-bg:#FEF3EB;
-  --blk:#111;--blk2:#2A2A2A;
-  --g100:#F6F5F2;--g200:#ECEAE5;--g400:#9B9993;--g600:#5C5A56;
+  --blk:#111;--g100:#F6F5F2;--g200:#ECEAE5;--g400:#9B9993;--g600:#5C5A56;
   --green:#2E7D32;--green-bg:#E8F5E9;
   --blue:#1565C0;--blue-bg:#E3F2FD;
   --purple:#6A1B9A;--purple-bg:#F3E5F5;
   --red:#ED1C24;--red-bg:#FDECEA;
-  --amber:#B45309;--amber-bg:#FEF3C7;
   --r:14px;--r-sm:8px;
   --font:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
 }
-html,body{height:100%;overflow:hidden;background:#fff}
+html,body{height:100%;background:#fff;overflow:hidden}
 body{font-family:var(--font);color:var(--blk)}
 .screen{display:none;flex-direction:column;height:100vh;overflow:hidden;background:var(--g100)}
 .screen.active{display:flex}
 
 /* SPLASH */
-.splash{background:var(--o);display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;padding:32px 28px;text-align:center}
-.splash-logo{font-size:60px;font-weight:900;font-style:italic;color:white;letter-spacing:-2px}
-.splash-lugar{font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:0.12em;text-transform:uppercase;margin-top:2px}
-.splash-div{width:50px;height:3px;background:rgba(255,255,255,0.35);border-radius:2px;margin:16px auto}
-.splash-title{font-size:28px;font-weight:800;color:white;line-height:1.15;letter-spacing:-0.5px}
-.splash-sub{font-size:13px;color:rgba(255,255,255,0.8);margin-top:8px;line-height:1.6}
-.splash-box{background:rgba(0,0,0,0.15);border-radius:var(--r);padding:13px 15px;margin:18px 0;text-align:left}
-.splash-box p{font-size:12px;color:rgba(255,255,255,0.9);line-height:1.7}
-.splash-disclaimer{font-size:10px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:14px;padding:0 4px}
-.splash-btn{background:white;color:var(--o);font-size:16px;font-weight:800;border:none;border-radius:var(--r);padding:15px 28px;cursor:pointer;width:100%;font-family:var(--font)}
-.splash-v{font-size:10px;color:rgba(255,255,255,0.3);margin-top:12px}
+.splash{background:var(--o);display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;padding:40px 32px;text-align:center}
+.splash-logo{font-size:64px;font-weight:900;font-style:italic;color:white;letter-spacing:-2px}
+.splash-lugar{font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:0.12em;text-transform:uppercase;margin-top:2px}
+.splash-div{width:50px;height:3px;background:rgba(255,255,255,0.35);border-radius:2px;margin:18px auto}
+.splash-title{font-size:30px;font-weight:800;color:white;line-height:1.15;letter-spacing:-0.5px}
+.splash-sub{font-size:14px;color:rgba(255,255,255,0.8);margin-top:8px;line-height:1.6}
+.splash-box{background:rgba(0,0,0,0.15);border-radius:var(--r);padding:14px 16px;margin:22px 0;text-align:left}
+.splash-box p{font-size:13px;color:rgba(255,255,255,0.9);line-height:1.7}
+.splash-btn{background:white;color:var(--o);font-size:17px;font-weight:800;border:none;border-radius:var(--r);padding:16px 32px;cursor:pointer;width:100%;font-family:var(--font);letter-spacing:-0.3px}
+.splash-v{font-size:11px;color:rgba(255,255,255,0.35);margin-top:14px}
 
 /* LOGIN */
 .login-top{background:var(--o);padding:env(safe-area-inset-top,0) 0 0}
@@ -53,60 +51,58 @@ body{font-family:var(--font);color:var(--blk)}
 .login-body{padding:24px 20px;flex:1;overflow-y:auto}
 .login-card{background:white;border-radius:var(--r);padding:22px;border:0.5px solid var(--g200)}
 .lbl{font-size:13px;font-weight:600;color:var(--g600);margin-bottom:8px;display:block}
-.linput{width:100%;border:1.5px solid var(--g200);border-radius:var(--r-sm);padding:14px;font-size:17px;font-family:var(--font);color:var(--blk);outline:none;background:white;-webkit-appearance:none;margin-bottom:12px}
+.linput{width:100%;border:1.5px solid var(--g200);border-radius:var(--r-sm);padding:14px;font-size:17px;font-family:var(--font);color:var(--blk);outline:none;background:white;-webkit-appearance:none}
 .linput:focus{border-color:var(--o)}
-.lbtn{width:100%;background:var(--o);color:white;border:none;border-radius:var(--r-sm);padding:16px;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--font)}
+.lbtn{width:100%;background:var(--o);color:white;border:none;border-radius:var(--r-sm);padding:16px;font-size:16px;font-weight:700;cursor:pointer;margin-top:14px;font-family:var(--font)}
 .lbtn:active{background:var(--o2)}
 .lerr{background:var(--red-bg);color:var(--red);font-size:13px;padding:10px 12px;border-radius:var(--r-sm);margin-top:12px;display:none;line-height:1.5}
 .lhint{font-size:12px;color:var(--g400);text-align:center;margin-top:14px;line-height:1.6}
 
 /* TOPBAR */
 .topbar{background:var(--o);padding:env(safe-area-inset-top,0) 0 0;flex-shrink:0;position:sticky;top:0;z-index:50}
-.topbar-inner{display:flex;align-items:center;gap:10px;padding:12px 16px}
-.tlogo{font-size:18px;font-weight:900;font-style:italic;color:white;flex-shrink:0;letter-spacing:-0.5px}
-.tdiv{width:1px;height:28px;background:rgba(255,255,255,0.3);flex-shrink:0}
+.topbar-inner{display:flex;align-items:center;gap:12px;padding:12px 16px}
+.tlogo{font-size:20px;font-weight:900;font-style:italic;color:white;flex-shrink:0;letter-spacing:-0.5px}
+.tdiv{width:1px;height:30px;background:rgba(255,255,255,0.3);flex-shrink:0}
 .tcopy{flex:1;min-width:0}
-.ttitle{font-size:15px;font-weight:700;color:white;line-height:1.1}
-.tsub{font-size:9px;color:rgba(255,255,255,0.65);margin-top:1px;text-transform:uppercase;letter-spacing:0.04em}
-.back{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.2);border:none;color:white;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
-.tbtn{background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 9px;color:white;font-size:10px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)}
-.pbtn{background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 9px;color:white;font-size:13px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;gap:3px}
-.pbtn span{font-size:10px;font-weight:600;color:white}
+.ttitle{font-size:15px;font-weight:700;color:white;line-height:1.15}
+.tsub{font-size:10px;color:rgba(255,255,255,0.65);margin-top:1px;text-transform:uppercase;letter-spacing:0.04em}
+.back{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.2);border:none;color:white;font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;line-height:1}
 
-/* BODY */
+/* SCROLLABLE BODY */
 .body{padding:14px 14px 90px;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+
+/* LABELS */
 .slabel{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--g400);margin:18px 0 8px}
 .slabel:first-child{margin-top:0}
 
-/* HOME AREA CARDS */
-.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.area-card{background:white;border-radius:var(--r);padding:16px 14px;cursor:pointer;border:0.5px solid var(--g200);position:relative;overflow:hidden;-webkit-user-select:none}
-.area-card:active{opacity:0.85}
-.area-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
-.ac-direitos::before{background:var(--purple)}
-.ac-dinheiro::before{background:var(--amber)}
-.ac-comunicar::before{background:var(--o)}
-.ac-contactos::before{background:var(--blue)}
-.area-icon{font-size:26px;margin-bottom:8px;display:block}
-.area-name{font-size:13px;font-weight:700;color:var(--blk);line-height:1.3}
-.area-sub{font-size:10px;color:var(--g400);margin-top:3px;line-height:1.4}
+/* CARGO SELECT */
+.cargo-btn{background:white;border-radius:var(--r);padding:16px;margin-bottom:10px;display:flex;align-items:center;gap:14px;cursor:pointer;border:0.5px solid var(--g200);border-left:4px solid var(--o);-webkit-user-select:none;user-select:none}
+.cargo-btn:active{opacity:0.85}
+.cargo-btn.blue{border-left-color:var(--blue)}
+.cargo-btn.green{border-left-color:var(--green)}
+.cargo-btn.purple{border-left-color:var(--purple)}
+.cargo-icon{font-size:30px;flex-shrink:0}
+.cargo-title{font-size:15px;font-weight:700;color:var(--blk)}
+.cargo-sub{font-size:12px;color:var(--g600);margin-top:3px;line-height:1.4}
+.cargo-arr{margin-left:auto;font-size:22px;color:var(--g400);flex-shrink:0}
 
 /* BANNER */
-.banner{background:white;border-radius:var(--r);padding:14px;margin-bottom:12px;border:0.5px solid var(--g200);display:flex;gap:10px}
-.banner-txt{font-size:13px;color:var(--g600);line-height:1.65}
-.banner-txt strong{color:var(--blk);font-weight:700;display:block;margin-bottom:2px}
+.banner{background:white;border-radius:var(--r);padding:14px;margin-bottom:14px;border:0.5px solid var(--g200);display:flex;gap:10px;align-items:flex-start}
+.banner-icon{font-size:22px;flex-shrink:0}
+.banner-text{font-size:13px;color:var(--g600);line-height:1.65}
+.banner-text strong{color:var(--blk);font-weight:600;display:block;margin-bottom:2px}
 
-/* CARDS */
-.card{background:white;border-radius:var(--r);margin-bottom:8px;overflow:hidden;border:0.5px solid var(--g200)}
-.card-hdr{display:flex;align-items:center;gap:10px;padding:13px;cursor:pointer;-webkit-user-select:none}
+/* CARDS / SITUATIONS */
+.card{background:white;border-radius:var(--r);margin-bottom:10px;overflow:hidden;border:0.5px solid var(--g200)}
+.card-hdr{display:flex;align-items:center;gap:10px;padding:14px;cursor:pointer;-webkit-user-select:none;user-select:none}
 .card-hdr:active{background:var(--g100)}
-.card-emoji{font-size:18px;flex-shrink:0;width:28px;text-align:center}
+.card-emoji{font-size:20px;flex-shrink:0;width:30px;text-align:center}
 .card-tag{font-size:9px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:2px}
 .card-title{font-size:13px;font-weight:700;color:var(--blk);line-height:1.35}
 .card-b{flex:1}
-.card-arr{color:var(--g400);font-size:16px;margin-left:auto;flex-shrink:0;transition:transform 0.2s}
+.card-arr{color:var(--g400);font-size:18px;margin-left:auto;transition:transform 0.2s;flex-shrink:0}
 .card.open .card-arr{transform:rotate(90deg);color:var(--o)}
-.card-content{display:none;padding:0 13px 14px 51px}
+.card-content{display:none;padding:0 14px 14px 54px}
 .card.open .card-content{display:block}
 .card-desc{font-size:13px;color:var(--g600);line-height:1.7;margin-bottom:10px}
 .card-desc strong{color:var(--blk);font-weight:600}
@@ -116,11 +112,11 @@ body{font-family:var(--font);color:var(--blk)}
 .step{display:flex;gap:9px;margin-bottom:10px;align-items:flex-start}
 .step:last-child{margin-bottom:0}
 .sn{width:22px;height:22px;border-radius:50%;background:var(--o);color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.st{font-size:13px;color:var(--blk2);line-height:1.65}
+.st{font-size:13px;color:#2A2A2A;line-height:1.65}
 .st strong{color:var(--blk);font-weight:600}
 .st em{color:var(--g600);font-style:normal;font-size:12px;display:block;margin-top:3px}
 
-/* BOXES */
+/* NOTE BOXES */
 .tip{background:var(--o-bg);border-left:3px solid var(--o);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:10px 12px;font-size:12px;color:var(--o2);line-height:1.6;margin-top:8px}
 .law{background:var(--blue-bg);border-left:3px solid var(--blue);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:10px 12px;font-size:12px;color:var(--blue);line-height:1.6;margin-top:8px}
 .direito{background:var(--green-bg);border-left:3px solid var(--green);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:10px 12px;font-size:12px;color:var(--green);line-height:1.6;margin-top:8px}
@@ -128,42 +124,21 @@ body{font-family:var(--font);color:var(--blk)}
 
 /* RIGHTS LIST */
 .rights{background:white;border-radius:var(--r);padding:16px;border:0.5px solid var(--g200)}
-.ri{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
-.ri:last-child{margin-bottom:0}
-
-/* COMUNICAR */
-.regra{background:var(--g100);border-radius:var(--r-sm);padding:11px;margin-bottom:8px;display:flex;gap:10px}
-.regra-title{font-size:12px;font-weight:700;color:var(--blk);margin-bottom:2px}
-.regra-desc{font-size:11px;color:var(--g600);line-height:1.5}
-.tpl{background:var(--g100);border-radius:var(--r-sm);padding:12px;margin-bottom:8px;border:0.5px solid var(--g200)}
-.tpl-label{font-size:9px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--o2);margin-bottom:8px}
-.tpl-text{font-size:11px;color:var(--blk);line-height:1.7;white-space:pre-line}
-.copy-btn{background:var(--o);color:white;border:none;border-radius:var(--r-sm);padding:9px 14px;font-size:12px;font-weight:700;cursor:pointer;margin-top:10px;font-family:var(--font);width:100%}
-.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--g200);cursor:pointer}
-.checklist-item:last-child{border-bottom:none}
-.chk{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--g200);background:white;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;transition:all 0.15s;margin-top:1px}
-.chk.on{background:var(--o);border-color:var(--o);color:white}
-.chk-text{font-size:13px;color:var(--blk);line-height:1.5}
-.chk-sub{font-size:11px;color:var(--g400);margin-top:2px}
+.right-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.right-item:last-child{margin-bottom:0}
+.right-item strong{color:var(--blk);font-weight:600}
 
 /* CONTACTS */
 .contact-card{background:white;border-radius:var(--r);padding:14px;margin-bottom:10px;display:flex;align-items:flex-start;gap:12px;border:0.5px solid var(--g200)}
-.cav{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.cav{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
 .cname{font-size:13px;font-weight:700;color:var(--blk)}
 .crole{font-size:11px;color:var(--g400);margin-top:2px}
 .clinks{margin-top:8px;display:flex;flex-direction:column;gap:6px}
 .clink{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;text-decoration:none}
-.social-row{background:white;border-radius:var(--r);border:0.5px solid var(--g200);overflow:hidden;margin-bottom:10px}
-.social-item{display:flex;align-items:center;gap:12px;padding:13px;text-decoration:none;border-bottom:0.5px solid var(--g200)}
-.social-item:last-child{border-bottom:none}
-.social-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-
-/* DISCLAIMER */
-.disclaimer{font-size:10px;color:var(--g400);line-height:1.6;padding:10px 0;text-align:center;margin-top:4px}
 
 /* BOTTOM NAV */
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:0.5px solid var(--g200);display:flex;padding:6px 0 env(safe-area-inset-bottom,8px);z-index:100}
-.nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 2px;cursor:pointer;border:none;background:transparent;color:var(--g400);font-size:9px;font-weight:600;font-family:var(--font);-webkit-user-select:none}
+.nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 2px;cursor:pointer;border:none;background:transparent;color:var(--g400);font-size:9px;font-weight:600;font-family:var(--font);-webkit-user-select:none;letter-spacing:0.02em}
 .nb-i{font-size:22px;line-height:1}
 .nb.active{color:var(--o)}
 </style>
@@ -179,11 +154,13 @@ body{font-family:var(--font);color:var(--blk)}
     <div class="splash-title">Guia do Autarca</div>
     <div class="splash-sub">A tua ferramenta para seres um autarca mais informado e mais exigente.</div>
     <div class="splash-box">
-      <p>📌 Sabes quais são os teus direitos na assembleia?<br><br>📌 Sabes como ler uma ata e o que procurar?<br><br>📌 Sabes como comunicar com a população?<br><br>Esta app foi feita para te ajudar.</p>
+      <p>📌 Sabes quais são os teus direitos na assembleia?<br><br>📌 Sabes como ler uma ata e o que procurar?<br><br>📌 Sabes quando e como podes falar e votar?<br><br>Esta app foi feita para te ajudar.</p>
     </div>
-    <div class="splash-disclaimer">⚠️ Este guia é um apoio político e formativo. Não substitui a consulta da legislação aplicável nem assessoria jurídica especializada.</div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:16px;padding:0 4px">
+      ⚠️ Este guia é um apoio político e formativo. Não substitui a consulta da legislação aplicável nem assessoria jurídica especializada.
+    </div>
     <button class="splash-btn" onclick="goTo('s-login')">Entrar na app →</button>
-    <div class="splash-v">PSD Montalegre · Demo</div>
+    <div class="splash-v">PSD Montalegre · Versão Demo</div>
   </div>
 </div>
 
@@ -198,395 +175,541 @@ body{font-family:var(--font);color:var(--blk)}
   </div>
   <div class="login-body">
     <div class="login-card">
+      <label class="lbl">Email</label>
+      <input class="linput" type="email" id="emailInput" placeholder="O teu email" autocomplete="email" style="margin-bottom:12px" onkeydown="if(event.key==='Enter')document.getElementById('pwdInput').focus()">
       <label class="lbl">Código de acesso</label>
       <input class="linput" type="password" id="pwdInput" placeholder="Código enviado pelo PSD" onkeydown="if(event.key==='Enter')doLogin()">
       <button class="lbtn" onclick="doLogin()">Entrar</button>
-      <div class="lerr" id="loginErr">❌ Código incorrecto. Contacta o José Pedro Correia.</div>
+      <div class="lerr" id="loginErr">❌ Email ou código incorrecto. Contacta o José Pedro Correia.</div>
       <div class="lhint">Não sabes o teu código?<br>Liga para 917 708 605</div>
     </div>
   </div>
 </div>
 
-<!-- ══════ INÍCIO ══════ -->
-<div class="screen" id="s-home">
+<!-- ══════ CARGO SELECT ══════ -->
+<div class="screen" id="s-cargo">
   <div class="topbar"><div class="topbar-inner">
     <div class="tlogo">PSD</div><div class="tdiv"></div>
     <div class="tcopy"><div class="ttitle">Guia do Autarca</div><div class="tsub">PSD Montalegre</div></div>
-    <button class="pbtn" onclick="printScreen()"><span>🖨️</span><span>Imprimir</span></button>
-    <button class="tbtn" onclick="doLogout()">Sair</button>
+    <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
     <div class="banner">
-      <div style="font-size:22px;flex-shrink:0">👋</div>
-      <div class="banner-txt"><strong>Bem-vindo ao Guia do Autarca!</strong>Escolhe uma área. Encontras tudo o que precisas para participares com confiança e exigires mais.</div>
+      <div class="banner-icon">👋</div>
+      <div class="banner-text"><strong>Bem-vindo!</strong>Escolhe o teu cargo e encontras tudo o que precisas para participares com confiança.</div>
     </div>
-    <div class="slabel">O que queres saber?</div>
-    <div class="area-grid">
-      <div class="area-card ac-direitos" onclick="goTo('s-direitos')">
-        <span class="area-icon">⚖️</span>
-        <div class="area-name">Os meus direitos</div>
-        <div class="area-sub">Assembleias, votações, ata, EDO</div>
-      </div>
-      <div class="area-card ac-dinheiro" onclick="goTo('s-dinheiro')">
-        <span class="area-icon">💰</span>
-        <div class="area-name">O dinheiro</div>
-        <div class="area-sub">Orçamento, receitas, fiscalizar</div>
-      </div>
-      <div class="area-card ac-comunicar" onclick="goTo('s-comunicar')">
-        <span class="area-icon">📣</span>
-        <div class="area-name">Comunicar</div>
-        <div class="area-sub">Regras, terreno, templates</div>
-      </div>
-      <div class="area-card ac-contactos" onclick="goTo('s-contactos')">
-        <span class="area-icon">📞</span>
-        <div class="area-name">Contactos</div>
-        <div class="area-sub">Comissão Política PSD</div>
-      </div>
+    <div class="slabel">Qual é o teu cargo?</div>
+    <div class="cargo-btn purple" onclick="goTo('s-af')">
+      <div class="cargo-icon">📋</div>
+      <div><div class="cargo-title">Membro da Assembleia de Freguesia</div><div class="cargo-sub">Sou da oposição — quero saber os meus direitos e como participar</div></div>
+      <div class="cargo-arr">›</div>
     </div>
-    <div class="slabel">🚨 Acesso rápido</div>
-    <div class="card" id="h-ata" style="border-left:3px solid var(--purple)">
-      <div class="card-hdr" onclick="tog('h-ata')"><div class="card-emoji">📜</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Direitos</div><div class="card-title">Como uso a ata a meu favor?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn">1</div><div class="st"><strong>Lê sempre a ata anterior</strong> antes de a aprovar.<em>Podes propor correcções se algo estiver errado ou incompleto.</em></div></li>
-        <li class="step"><div class="sn">2</div><div class="st"><strong>Verifica as tuas intervenções.</strong> Se falta algo — pede correcção antes da aprovação.</div></li>
-        <li class="step"><div class="sn">3</div><div class="st"><strong>Guarda todas as atas.</strong> O que foi prometido e não foi feito é prova.</div></li>
-      </ul><div class="tip">💡 O que não está na ata, não aconteceu legalmente. É a tua arma política mais poderosa.</div></div>
+    <div class="cargo-btn" onclick="goTo('s-mesa')">
+      <div class="cargo-icon">🪑</div>
+      <div><div class="cargo-title">Presidente da Assembleia de Freguesia</div><div class="cargo-sub">Presido às sessões — quero saber como conduzir correctamente</div></div>
+      <div class="cargo-arr">›</div>
     </div>
-    <div class="card" id="h-edo" style="border-left:3px solid var(--red)">
-      <div class="card-hdr" onclick="tog('h-edo')"><div class="card-emoji">🔄</div><div class="card-b"><div class="card-tag" style="color:var(--red)">Erro comum</div><div class="card-title">Pedem-nos propostas — mas é o contrário!</div></div><div class="card-arr">›</div></div>
-      <div class="card-content">
-        <div class="card-desc" style="color:var(--red);font-weight:600">⚠️ O presidente pede-nos propostas para o orçamento — está errado e viola a lei.</div>
-        <ul class="steps" style="margin-top:10px">
-          <li class="step"><div class="sn" style="background:var(--green)">✓</div><div class="st"><strong>O executivo elabora</strong> o orçamento e envia à oposição.</div></li>
-          <li class="step"><div class="sn" style="background:var(--green)">✓</div><div class="st"><strong>A oposição pronuncia-se</strong> — dá parecer, critica, propõe alterações.</div></li>
-          <li class="step"><div class="sn" style="background:var(--red)">✗</div><div class="st"><strong>Não é correcto</strong> pedir à oposição que apresente as suas propostas de orçamento.</div></li>
-        </ul>
-        <div class="atencao">⚠️ <strong>Parecer CCDR-N (INF_DSAJAL_TL_1280/2020) —</strong> A recusa de documentos pelo executivo viola o Estatuto do Direito de Oposição (Lei 24/98).</div>
-      </div>
+    <div class="cargo-btn green" onclick="goTo('s-pj')">
+      <div class="cargo-icon">👤</div>
+      <div><div class="cargo-title">Presidente de Junta de Freguesia</div><div class="cargo-sub">Giro a junta — quero saber as minhas competências e obrigações</div></div>
+      <div class="cargo-arr">›</div>
     </div>
-    <div class="disclaimer">⚠️ Apoio político e formativo. Não substitui assessoria jurídica especializada.</div>
+    <div class="cargo-btn blue" onclick="goTo('s-mj')">
+      <div class="cargo-icon">🤝</div>
+      <div><div class="cargo-title">Membro da Junta de Freguesia</div><div class="cargo-sub">Faço parte do executivo — quero saber o meu papel</div></div>
+      <div class="cargo-arr">›</div>
+    </div>
+    <div class="cargo-btn" style="border-left-color:var(--g400);background:white" onclick="goTo('s-contactos')">
+      <div class="cargo-icon">💬</div>
+      <div><div class="cargo-title" style="color:var(--g600)">Tens dúvidas?</div><div class="cargo-sub">Contacta a Comissão Política PSD Montalegre</div></div>
+      <div class="cargo-arr">›</div>
+    </div>
   </div>
   <nav class="bottom-nav">
-    <button class="nb active" onclick="goTo('s-home')"><div class="nb-i">🏠</div>Início</button>
-    <button class="nb" onclick="goTo('s-direitos')"><div class="nb-i">⚖️</div>Direitos</button>
-    <button class="nb" onclick="goTo('s-dinheiro')"><div class="nb-i">💰</div>Dinheiro</button>
-    <button class="nb" onclick="goTo('s-comunicar')"><div class="nb-i">📣</div>Comunicar</button>
+    <button class="nb active" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
+    <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
     <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
 
-<!-- ══════ DIREITOS ══════ -->
-<div class="screen" id="s-direitos">
+<!-- ══════ ASSEMBLEIA FREGUESIA ══════ -->
+<div class="screen" id="s-af">
   <div class="topbar"><div class="topbar-inner">
     <button class="back" onclick="goBack()">‹</button>
-    <div class="tcopy"><div class="ttitle">⚖️ Os meus direitos</div><div class="tsub">Assembleias, votações e fiscalização</div></div>
-    <button class="pbtn" onclick="printScreen()"><span>🖨️</span><span>Imprimir</span></button>
-    <button class="tbtn" onclick="doLogout()">Sair</button>
+    <div class="tcopy"><div class="ttitle">📋 Assembleia de Freguesia</div><div class="tsub">Os teus direitos como oposição</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
-    <div class="banner"><div style="font-size:22px;flex-shrink:0">💪</div><div class="banner-txt"><strong>Tu tens poder.</strong>Como membro da assembleia tens direitos garantidos por lei. A maioria não te pode calar.</div></div>
+    <div class="banner">
+      <div class="banner-icon">💪</div>
+      <div class="banner-text"><strong>Tu tens poder.</strong>Como membro da assembleia tens direitos garantidos por lei. A maioria não te pode calar, não pode ignorar os teus pedidos, e não pode votar sem ti estar presente.</div>
+    </div>
 
     <div class="slabel">Antes da reunião</div>
-    <div class="card" id="d1"><div class="card-hdr" onclick="tog('d1')"><div class="card-emoji">📬</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Preparação</div><div class="card-title">Recebi a convocatória — o que faço?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn">1</div><div class="st"><strong>Lê a ordem do dia com atenção.</strong><em>Tens direito a recebê-la com 8 dias de antecedência (sessões ordinárias).</em></div></li>
-        <li class="step"><div class="sn">2</div><div class="st"><strong>Pede os documentos de suporte</strong> para cada ponto da ordem do dia.</div></li>
-        <li class="step"><div class="sn">3</div><div class="st"><strong>Prepara as tuas perguntas.</strong><em>Uma boa pergunta vale mais do que dez minutos de discurso.</em></div></li>
-        <li class="step"><div class="sn">4</div><div class="st"><strong>Confirma presença.</strong> Sem quórum a reunião não é válida.</div></li>
-      </ul><div class="direito">✅ Tens direito a receber a convocatória com pelo menos 8 dias de antecedência (sessões ordinárias) ou 48 horas (urgentes).</div></div>
+
+    <div class="card" id="af1">
+      <div class="card-hdr" onclick="tog('af1')">
+        <div class="card-emoji">📬</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Preparação</div><div class="card-title">Recebi a convocatória — o que faço?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Lê a ordem do dia com atenção.</strong> É a lista de tudo o que vai ser discutido e votado. Se não perceberes algo — pergunta antes da reunião.<em>Tens o direito de receber a convocatória com pelo menos 8 dias de antecedência (sessões ordinárias).</em></div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Pede os documentos de suporte.</strong> Para cada ponto da ordem do dia, podes pedir os documentos (orçamentos, relatórios, atas anteriores) antes da reunião.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Prepara as tuas perguntas.</strong> Para cada ponto que não concordes ou não entendas — anota o que queres perguntar ou dizer.<em>Uma pergunta boa vale mais do que dez minutos de discurso.</em></div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>Confirma presença.</strong> O quórum é importante — sem membros suficientes a reunião não é válida.</div></li>
+        </ul>
+        <div class="direito">✅ <strong>Direito:</strong> Tens direito a receber a convocatória e a ordem do dia com antecedência mínima de 8 dias (sessões ordinárias) ou 48 horas (sessões extraordinárias urgentes).</div>
+      </div>
     </div>
 
     <div class="slabel">Durante a reunião</div>
-    <div class="card" id="d2"><div class="card-hdr" onclick="tog('d2')"><div class="card-emoji">🗣️</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Participação</div><div class="card-title">Quero falar — quando e como posso?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn">1</div><div class="st"><strong>Pede a palavra ao presidente da mesa.</strong> Levanta o braço ou diz "peço a palavra".</div></li>
-        <li class="step"><div class="sn">2</div><div class="st"><strong>Período de antes da ordem do dia</strong> — podes levantar qualquer assunto no início da sessão.<em>É o momento para trazer problemas que a maioria quer evitar discutir.</em></div></li>
-        <li class="step"><div class="sn">3</div><div class="st"><strong>Sê directo e concreto.</strong><em>2 minutos bem usados têm mais impacto do que 10 minutos vagos.</em></div></li>
-      </ul><div class="tip">💡 Se não te derem a palavra — diz em voz alta "exijo o meu direito de intervir" e fica em ata.</div>
-      <div class="law">📖 <strong>Lei 75/2013 —</strong> Todos os membros têm direito de intervir nos debates sobre os pontos da ordem do dia.</div></div>
+
+    <div class="card" id="af2">
+      <div class="card-hdr" onclick="tog('af2')">
+        <div class="card-emoji">🗣️</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Participação</div><div class="card-title">Quero falar — quando e como posso?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Pede a palavra ao presidente da mesa.</strong> Levanta o braço ou diz "peço a palavra". Não podes falar sem ser autorizado.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Período de antes da ordem do dia</strong> — no início de cada sessão podes levantar qualquer assunto que não esteja na agenda.<em>É o momento certo para trazer problemas da freguesia que a maioria quer evitar discutir.</em></div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Fala sobre cada ponto da ordem do dia</strong> — quando o presidente abre o ponto para discussão, tens o direito de intervir.</div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>Sê directo e concreto.</strong> 2 minutos bem usados têm mais impacto do que 10 minutos vagos.<em>Diz o que vês de errado e o que propões.</em></div></li>
+        </ul>
+        <div class="tip">💡 Se o presidente da mesa não te der a palavra quando a pedes — diz em voz alta "exijo o meu direito de intervir" e fica em ata.</div>
+        <div class="law">📖 <strong>Lei 75/2013 —</strong> Todos os membros têm direito de intervir nos debates sobre os pontos da ordem do dia.</div>
+      </div>
     </div>
 
-    <div class="card" id="d3"><div class="card-hdr" onclick="tog('d3')"><div class="card-emoji">🗳️</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Votação</div><div class="card-title">Como se vota e o que significa cada voto?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn">1</div><div class="st"><strong>Favor</strong> — concordas com a proposta.</div></li>
-        <li class="step"><div class="sn">2</div><div class="st"><strong>Contra</strong> — discordas. Fica registado na ata com o teu nome.</div></li>
-        <li class="step"><div class="sn">3</div><div class="st"><strong>Abstenção</strong> — não tomas partido.<em>Cuidado: abster-te demasiado enfraquece a tua posição política.</em></div></li>
-      </ul><div class="atencao">⚠️ <strong>Declaração de voto:</strong> Quando votas contra podes explicar porque votaste assim — fica na ata para sempre. É a tua voz registada.</div>
-      <div class="law">📖 A votação é nominal — cada membro vota em voz alta e fica registado pelo nome na ata.</div></div>
+    <div class="card" id="af3">
+      <div class="card-hdr" onclick="tog('af3')">
+        <div class="card-emoji">🗳️</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Votação</div><div class="card-title">Como se vota e o que significa cada voto?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Favor</strong> — votas a favor da proposta. Concordas.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Contra</strong> — votas contra. Discordas e isso fica registado na ata com o teu nome.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Abstenção</strong> — não tomas partido. Conta para o quórum mas não é nem favor nem contra.<em>Cuidado: abster-te muitas vezes quando discordas enfraquece a tua posição política.</em></div></li>
+        </ul>
+        <div class="atencao">⚠️ <strong>Declaração de voto:</strong> Quando votas contra ou te abstens, podes e deves apresentar uma declaração de voto — explicas porque votaste assim. Fica na ata. É a tua voz registada para sempre.</div>
+        <div class="law">📖 A votação é normalmente nominal — cada membro vota em voz alta e fica registado pelo nome na ata.</div>
+      </div>
     </div>
 
-    <div class="card" id="d4"><div class="card-hdr" onclick="tog('d4')"><div class="card-emoji">📜</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Ata</div><div class="card-title">O que é a ata e como a devo usar?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><div class="card-desc"><strong>O que não está na ata, não aconteceu legalmente.</strong></div><ul class="steps">
-        <li class="step"><div class="sn">1</div><div class="st"><strong>Lê sempre a ata anterior</strong> antes de a aprovar. Podes propor correcções.</div></li>
-        <li class="step"><div class="sn">2</div><div class="st"><strong>Verifica se as tuas intervenções foram registadas.</strong> Se falta algo — pede correcção.</div></li>
-        <li class="step"><div class="sn">3</div><div class="st"><strong>Verifica os votos.</strong> Favor, contra, abstenções e nomes.</div></li>
-        <li class="step"><div class="sn">4</div><div class="st"><strong>Guarda todas as atas.</strong> São a tua prova do que foi prometido.</div></li>
-      </ul><div class="tip">💡 A ata é a tua arma política mais poderosa. O que foi prometido e não foi feito — tens a prova.</div></div>
+    <div class="card" id="af4">
+      <div class="card-hdr" onclick="tog('af4')">
+        <div class="card-emoji">📜</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Ata</div><div class="card-title">O que é a ata e como a devo usar?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <div class="card-desc">A ata é o registo oficial de tudo o que aconteceu na reunião. <strong>O que não está na ata, não aconteceu legalmente.</strong></div>
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Lê sempre a ata da sessão anterior</strong> antes de a aprovares. É lida no início de cada sessão.<em>Tens o direito de propor correcções se algo estiver errado ou incompleto.</em></div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Verifica se as tuas intervenções foram registadas.</strong> Tudo o que disseste deve constar. Se falta algo — pede a correcção antes de a ata ser aprovada.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Verifica os votos.</strong> Confirma que o resultado de cada votação está correcto — favor, contra, abstenções e os nomes.</div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>Guarda todas as atas.</strong> São o historial político da assembleia — e a prova do que foi prometido e não cumprido.</div></li>
+        </ul>
+        <div class="tip">💡 A ata é a tua arma política mais poderosa. Se a maioria prometeu uma obra em ata e não a fez — tens a prova.</div>
+      </div>
     </div>
 
-    <div class="card" id="d5"><div class="card-hdr" onclick="tog('d5')"><div class="card-emoji">📝</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Propostas</div><div class="card-title">Posso apresentar propostas e recomendações?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn">1</div><div class="st"><strong>Sim — tens esse direito.</strong> Propostas, recomendações ao presidente de junta e pedidos de informação.</div></li>
-        <li class="step"><div class="sn">2</div><div class="st"><strong>Submete por escrito</strong> antes da sessão para constar da ordem do dia.</div></li>
-        <li class="step"><div class="sn">3</div><div class="st"><strong>Estrutura simples:</strong> "Proponho que a Assembleia recomende ao Presidente da Junta que [acção] no prazo de [x dias]."</div></li>
-        <li class="step"><div class="sn">4</div><div class="st"><strong>Mesmo que seja chumbada</strong> — fica em ata. É comunicação política perante a população.</div></li>
-      </ul><div class="direito">✅ Uma recomendação aprovada obriga o presidente de junta a responder e a justificar.</div></div>
+    <div class="card" id="af5">
+      <div class="card-hdr" onclick="tog('af5')">
+        <div class="card-emoji">📝</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Propostas</div><div class="card-title">Posso apresentar propostas e recomendações?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Sim — tens esse direito.</strong> Podes apresentar propostas de deliberação, recomendações ao presidente de junta e pedidos de informação.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Submete por escrito</strong> antes da sessão para constar da ordem do dia. Caso contrário, apresentas no período de antes da ordem do dia.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Estrutura simples:</strong> "Proponho que a Assembleia recomende ao Presidente da Junta que [acção concreta] no prazo de [x dias]."</div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>Mesmo que seja chumbada</strong> pela maioria — fica registada em ata. É comunicação política perante a população.</div></li>
+        </ul>
+        <div class="direito">✅ Uma recomendação aprovada obriga o presidente de junta a responder. Não a cumprir — mas a responder e justificar.</div>
+      </div>
     </div>
+
+    <div class="card" id="af6">
+      <div class="card-hdr" onclick="tog('af6')">
+        <div class="card-emoji">🔍</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Fiscalização</div><div class="card-title">Como fiscalizo o que a junta faz com o dinheiro?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Pede o mapa de execução orçamental.</strong> Tens o direito de saber quanto foi gasto, em quê e se estava orçamentado.<em>Faz este pedido por escrito ao presidente da junta.</em></div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Quando aprovares a conta de gerência</strong> (no final do ano) — analisa linha a linha. Não aproves o que não entendes. Pede esclarecimentos.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Compara com o orçamento aprovado.</strong> O que estava previsto e não foi feito? O que foi feito e não estava previsto?</div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>As 3 perguntas chave:</strong><em>"Estava isto orçamentado?" · "Existe documento desta despesa?" · "Houve concurso ou 3 orçamentos?"</em></div></li>
+        </ul>
+        <div class="tip">💡 Não precisas de ser especialista em finanças. Precisas de fazer estas perguntas. Se não consegues resposta — é um sinal de alerta.</div>
+      </div>
+    </div>
+
 
     <div class="slabel">⚖️ Estatuto do Direito de Oposição</div>
-    <div class="card" id="d6"><div class="card-hdr" onclick="tog('d6')"><div class="card-emoji">⚖️</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">EDO</div><div class="card-title">O que é o Estatuto do Direito de Oposição?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><div class="card-desc">O Direito de Oposição está na <strong>Constituição (art. 114.º)</strong> e na <strong>Lei n.º 24/98 (EDO)</strong>. O PSD tem este direito nas assembleias onde não faz parte do executivo.</div>
-      <div class="direito">✅ <strong>Direito à informação (art. 4.º EDO) —</strong> O executivo tem o dever de informar a oposição regularmente — não esperas que te peçam.</div>
-      <div class="direito" style="margin-top:6px">✅ <strong>Direito de consulta prévia (art. 5.º EDO) —</strong> Tens de receber os documentos completos (orçamento, plano) antes de seres ouvido — não resumos.</div>
-      <div class="law" style="margin-top:6px">📖 <strong>Parecer CCDR-N (INF_DSAJAL_TL_1280/2020) —</strong> "Não nos podemos pronunciar sobre documentos que não nos são facultados." A recusa viola o EDO.</div></div>
+
+    <div class="card" id="af7">
+      <div class="card-hdr" onclick="tog('af7')">
+        <div class="card-emoji">⚖️</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Direito de Oposição</div><div class="card-title">O que é o Estatuto do Direito de Oposição?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <div class="card-desc">O Direito de Oposição está consagrado no <strong>artigo 114.º da Constituição</strong> e desenvolvido na <strong>Lei n.º 24/98</strong> — o Estatuto do Direito de Oposição (EDO). Aplica-se às assembleias de freguesia.</div>
+        <div class="card-desc" style="margin-top:8px"><strong>O que é a oposição?</strong> É a actividade de <strong>acompanhamento, fiscalização e crítica</strong> das orientações políticas do executivo — neste caso, da Junta de Freguesia.</div>
+        <div class="direito">✅ <strong>Art. 114.º da Constituição —</strong> É reconhecido às minorias o direito de oposição democrática. O PSD tem esse direito nas assembleias de freguesia onde não faz parte do executivo.</div>
+        <div class="law">📖 <strong>Lei n.º 24/98 (EDO), art. 3.º —</strong> São titulares do direito de oposição os partidos representados nos órgãos deliberativos das autarquias locais que não estejam representados no correspondente órgão executivo.</div>
+      </div>
     </div>
 
-    <div class="card" id="d7"><div class="card-hdr" onclick="tog('d7')"><div class="card-emoji">🔍</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Fiscalização</div><div class="card-title">Como fiscalizo o que a junta faz?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn">1</div><div class="st"><strong>Pede o mapa de execução orçamental.</strong><em>Tens direito a pedi-lo a qualquer momento por escrito.</em></div></li>
-        <li class="step"><div class="sn">2</div><div class="st"><strong>As 3 perguntas chave:</strong><em>"Estava isto orçamentado?" · "Existe documento desta despesa?" · "Pediram 3 orçamentos?"</em></div></li>
-        <li class="step"><div class="sn">3</div><div class="st"><strong>Quando aprovares a conta de gerência</strong> — analisa linha a linha. Não aproves o que não entendes.</div></li>
-      </ul><div class="tip">💡 Não precisas de saber contabilidade. Estas 3 perguntas bastam. Sem resposta — é sinal de alerta.</div></div>
+    <div class="card" id="af8">
+      <div class="card-hdr" onclick="tog('af8')">
+        <div class="card-emoji">🔄</div><div class="card-b"><div class="card-tag" style="color:var(--red)">Erro Comum</div><div class="card-title">Pedem-nos propostas — mas é exactamente o contrário!</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <div class="card-desc" style="color:var(--red);font-weight:600">⚠️ Atenção — este é o erro mais comum e mais deliberadamente confundido.</div>
+        <div class="card-desc" style="margin-top:8px">O presidente da junta convoca a oposição e pede-lhe que apresente <em>as suas propostas</em> para o orçamento ou plano de actividades. Parece razoável — mas está <strong>errado e viola a lei.</strong></div>
+        <div class="card-desc" style="margin-top:8px"><strong>Como funciona correctamente:</strong></div>
+        <ul class="steps" style="margin-top:8px">
+          <li class="step"><div class="sn" style="background:var(--green)">✓</div><div class="st"><strong>O executivo elabora</strong> a proposta de orçamento e plano de actividades.</div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">✓</div><div class="st"><strong>O executivo envia à oposição</strong> esses documentos, em tempo útil, para que os possamos analisar.</div></li>
+          <li class="step"><div class="sn" style="background:var(--green)">✓</div><div class="st"><strong>A oposição pronuncia-se</strong> — dá o seu parecer, critica, propõe alterações, aprova ou rejeita.</div></li>
+        </ul>
+        <div class="card-desc" style="margin-top:10px"><strong>O que NÃO é correcto:</strong></div>
+        <ul class="steps" style="margin-top:8px">
+          <li class="step"><div class="sn" style="background:var(--red)">✗</div><div class="st">Convocar a oposição sem enviar os documentos previamente.</div></li>
+          <li class="step"><div class="sn" style="background:var(--red)">✗</div><div class="st">Pedir à oposição que apresente as suas propostas de orçamento.</div></li>
+          <li class="step"><div class="sn" style="background:var(--red)">✗</div><div class="st">Enviar só um resumo ou "linhas mestras" sem os documentos completos.</div></li>
+          <li class="step"><div class="sn" style="background:var(--red)">✗</div><div class="st">Dar menos de 10 dias para analisar documentos complexos.</div></li>
+        </ul>
+        <div class="atencao">⚠️ <strong>Parecer CCDR-N (INF_DSAJAL_TL_1280/2020) —</strong> "Não nos podemos pronunciar, ser ouvidos, sobre documentos que não nos são facultados e que desconhecemos." A recusa de entrega de documentos pelo executivo viola o Estatuto do Direito de Oposição.</div>
+      </div>
     </div>
 
-    <div class="slabel">Presidente da Assembleia</div>
-    <div class="card" id="d8"><div class="card-hdr" onclick="tog('d8')"><div class="card-emoji">🪑</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Mesa</div><div class="card-title">Como conduzo uma sessão correctamente?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn">1</div><div class="st"><strong>Verifica o quórum</strong> — sem maioria a sessão não pode abrir.</div></li>
-        <li class="step"><div class="sn">2</div><div class="st"><strong>Declara aberta</strong> e anuncia a ordem do dia.</div></li>
-        <li class="step"><div class="sn">3</div><div class="st"><strong>Submete a ata anterior</strong> à aprovação.</div></li>
-        <li class="step"><div class="sn">4</div><div class="st"><strong>Abre o período de antes da ordem do dia.</strong></div></li>
-        <li class="step"><div class="sn">5</div><div class="st"><strong>Para cada ponto:</strong> discussão → votação → resultado → declarações de voto.</div></li>
-      </ul><div class="atencao">⚠️ Não podes recusar a palavra a nenhum membro. Podes limitar o tempo de intervenção — não podes calar ninguém.</div></div>
+    <div class="card" id="af9">
+      <div class="card-hdr" onclick="tog('af9')">
+        <div class="card-emoji">📋</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Direitos Concretos</div><div class="card-title">O que temos direito a exigir ao abrigo do EDO?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <div class="card-desc"><strong>Direito à informação</strong> — art. 4.º do EDO:</div>
+        <ul class="steps" style="margin-top:6px">
+          <li class="step"><div class="sn">1</div><div class="st">Ser informados <strong>regular e directamente</strong> pelo executivo sobre o andamento dos principais assuntos de interesse público.<em>Não é preciso pedir — o executivo tem o dever de informar.</em></div></li>
+          <li class="step"><div class="sn">2</div><div class="st">As informações devem ser prestadas <strong>directamente e em prazo razoável.</strong></div></li>
+        </ul>
+        <div class="card-desc" style="margin-top:10px"><strong>Direito de consulta prévia</strong> — art. 5.º do EDO:</div>
+        <ul class="steps" style="margin-top:6px">
+          <li class="step"><div class="sn">1</div><div class="st">Ser <strong>ouvidos antes da aprovação</strong> das propostas de orçamento e planos de actividade.<em>O momento certo é depois de o executivo elaborar os documentos e antes de os aprovar formalmente.</em></div></li>
+          <li class="step"><div class="sn">2</div><div class="st">Receber os <strong>documentos completos</strong> com antecedência suficiente para os analisar.<em>Não são "linhas mestras" nem resumos — são os documentos reais.</em></div></li>
+        </ul>
+        <div class="card-desc" style="margin-top:10px"><strong>Direito a relatório de avaliação</strong> — art. 9.º da Lei 75/2013:</div>
+        <ul class="steps" style="margin-top:6px">
+          <li class="step"><div class="sn">1</div><div class="st">A junta tem de <strong>publicar por edital</strong> o relatório de avaliação da sua actividade.<em>É uma obrigação do executivo, não um favor.</em></div></li>
+          <li class="step"><div class="sn">2</div><div class="st">A assembleia pode <strong>discutir este relatório</strong> a pedido de qualquer titular do direito de oposição.</div></li>
+        </ul>
+        <div class="direito">✅ <strong>O que fazer se o executivo recusar:</strong> apresenta uma reclamação formal ao presidente da mesa da assembleia de freguesia, invocando o artigo 9.º, alínea h) da Lei 75/2013 e os artigos 4.º e 5.º do EDO. Fica tudo registado em ata.</div>
+        <div class="law">📖 <strong>Constituição, art. 114.º · Lei 24/98 (EDO) · Lei 75/2013, art. 16.º, alínea tt)</strong> — A junta tem a obrigação de dar cumprimento ao Estatuto do Direito de Oposição.</div>
+      </div>
     </div>
 
-    <div class="card" id="d9"><div class="card-hdr" onclick="tog('d9')"><div class="card-emoji">📜</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Regimento</div><div class="card-title">O que é o regimento e porque importa?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><div class="card-desc">O regimento define como a assembleia funciona — tempos de intervenção, como se pede a palavra, como se fazem propostas.</div><ul class="steps">
-        <li class="step"><div class="sn">1</div><div class="st"><strong>Se não existe</strong> — propõe a sua aprovação logo no início do mandato.</div></li>
-        <li class="step"><div class="sn">2</div><div class="st"><strong>Uma vez aprovado,</strong> maioria e oposição têm as mesmas regras.</div></li>
-      </ul><div class="tip">💡 Um bom regimento protege a oposição. Define tempos iguais para todos. Propõe-o logo no início.</div></div>
+    <div class="card" id="af10">
+      <div class="card-hdr" onclick="tog('af10')">
+        <div class="card-emoji">✉️</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Como Agir</div><div class="card-title">O executivo não nos envia os documentos — o que fazer?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Pede por escrito</strong> ao presidente da junta o envio dos documentos — proposta de orçamento, GOP e PPI — invocando o artigo 5.º da Lei n.º 24/98.<em>Guarda sempre cópia do pedido com data.</em></div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Se não responder em prazo razoável</strong> (máximo 10 dias) — envia nova carta a relembrar a obrigação legal, com referência ao parecer da CCDR-N.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Leva o assunto à assembleia</strong> — apresenta uma reclamação formal ao presidente da mesa, invocando o artigo 9.º, alínea h) da Lei 75/2013.<em>"Solicito que seja discutida a violação do Estatuto do Direito de Oposição pelo executivo."</em></div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>Em último recurso</strong> — podes comunicar à CCDR-N ou ao Ministério Público a violação do EDO. Junta toda a documentação dos pedidos sem resposta.</div></li>
+        </ul>
+        <div class="tip">💡 O simples facto de fazeres o pedido por escrito e ficar sem resposta já é, por si só, material político e prova de incumprimento legal. Não desistas — insiste e documenta tudo.</div>
+      </div>
     </div>
-
     <div class="slabel">Os teus 7 direitos</div>
     <div class="rights">
-      <div class="ri"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de voto</strong> em todas as deliberações</div></div>
-      <div class="ri"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de palavra</strong> em todos os pontos da ordem do dia</div></div>
-      <div class="ri"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de pedir informação</strong> ao presidente da junta</div></div>
-      <div class="ri"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de propor</strong> deliberações e recomendações</div></div>
-      <div class="ri"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de declaração de voto</strong> — registada na ata</div></div>
-      <div class="ri"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de corrigir a ata</strong> se estiver incompleta</div></div>
-      <div class="ri"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de faltar ao trabalho</strong> para cumprir o mandato</div></div>
+      <div class="right-item"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de voto</strong> em todas as deliberações</div></div>
+      <div class="right-item"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de palavra</strong> em todos os pontos da ordem do dia</div></div>
+      <div class="right-item"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de pedir informação</strong> ao presidente da junta</div></div>
+      <div class="right-item"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de propor</strong> deliberações e recomendações</div></div>
+      <div class="right-item"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de declaração de voto</strong> — registada na ata</div></div>
+      <div class="right-item"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de corrigir a ata</strong> se estiver incompleta</div></div>
+      <div class="right-item"><span style="font-size:16px">✅</span><div style="font-size:13px;color:var(--g600);line-height:1.5"><strong>Direito de faltar ao trabalho</strong> para cumprir o mandato</div></div>
     </div>
-    <div class="disclaimer">⚠️ Apoio político e formativo. Não substitui assessoria jurídica especializada.</div>
+
   </div>
   <nav class="bottom-nav">
-    <button class="nb" onclick="goTo('s-home')"><div class="nb-i">🏠</div>Início</button>
-    <button class="nb active"><div class="nb-i">⚖️</div>Direitos</button>
-    <button class="nb" onclick="goTo('s-dinheiro')"><div class="nb-i">💰</div>Dinheiro</button>
-    <button class="nb" onclick="goTo('s-comunicar')"><div class="nb-i">📣</div>Comunicar</button>
+    <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
+    <button class="nb active"><div class="nb-i">📋</div>Assembleia</button>
+    <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
     <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
 
-<!-- ══════ DINHEIRO ══════ -->
-<div class="screen" id="s-dinheiro">
+<!-- ══════ PRESIDENTE DA MESA ══════ -->
+<div class="screen" id="s-mesa">
   <div class="topbar"><div class="topbar-inner">
     <button class="back" onclick="goBack()">‹</button>
-    <div class="tcopy"><div class="ttitle">💰 O dinheiro</div><div class="tsub">Orçamento, receitas e fiscalização</div></div>
-    <button class="pbtn" onclick="printScreen()"><span>🖨️</span><span>Imprimir</span></button>
-    <button class="tbtn" onclick="doLogout()">Sair</button>
+    <div class="tcopy"><div class="ttitle">🪑 Presidente da Assembleia</div><div class="tsub">Conduzir sessões com rigor</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
-    <div class="banner"><div style="font-size:22px;flex-shrink:0">🎯</div><div class="banner-txt"><strong>Não precisas de ser especialista.</strong>Precisas de fazer as perguntas certas e exigir respostas.</div></div>
-
-    <div class="slabel">De onde vem o dinheiro</div>
-    <div class="card" id="din1"><div class="card-hdr" onclick="tog('din1')"><div class="card-emoji">💶</div><div class="card-b"><div class="card-tag" style="color:var(--amber)">Receitas</div><div class="card-title">De onde vem o dinheiro da junta?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn" style="background:var(--amber)">1</div><div class="st"><strong>FFF — Fundo de Financiamento das Freguesias</strong><em>O Estado distribui 2,5% do IRS+IRC+IVA por todas as juntas. Em 2024 foram 349 milhões de euros para todo o país. Cada junta recebe uma fatia calculada pela sua população e área.</em></div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">2</div><div class="st"><strong>Câmara Municipal</strong><em>Transfere verbas quando delega competências — ex: manutenção de caminhos.</em></div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">3</div><div class="st"><strong>Receitas próprias</strong><em>Taxas de cemitério, mercados, coimas, rendimento de imóveis da junta.</em></div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">4</div><div class="st"><strong>IMI rústico</strong><em>50% do imposto sobre terrenos rústicos da freguesia vai directamente para a junta.</em></div></li>
-      </ul><div class="tip">💡 Nas juntas pequenas de Montalegre, o FFF é a fonte principal. O valor exacto da tua junta está no Mapa 13 da Lei do Orçamento do Estado.</div></div>
+    <div class="banner">
+      <div class="banner-icon">⚖️</div>
+      <div class="banner-text"><strong>A tua função é garantir que a lei é cumprida.</strong>Não és árbitro da maioria — és o guardião do processo democrático. Todos os membros têm direitos iguais perante a mesa.</div>
     </div>
+    <div class="slabel">Condução das sessões</div>
 
-    <div class="slabel">O orçamento</div>
-    <div class="card" id="din2"><div class="card-hdr" onclick="tog('din2')"><div class="card-emoji">📊</div><div class="card-b"><div class="card-tag" style="color:var(--amber)">Orçamento</div><div class="card-title">O que é o orçamento e como se aprova?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><div class="card-desc">É o plano anual do dinheiro — o que vai entrar (receitas) e o que vai sair (despesas). <strong>Quem o aprova é a Assembleia de Freguesia — não o presidente da junta.</strong></div><ul class="steps">
-        <li class="step"><div class="sn" style="background:var(--amber)">1</div><div class="st"><strong>O presidente propõe</strong> — a Assembleia discute e vota.</div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">2</div><div class="st"><strong>Tem de ser aprovado até 31 de Dezembro.</strong> Se não for — duodécimos (1/12 do ano anterior por mês).</div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">3</div><div class="st"><strong>Despesas correntes</strong> — repetidas todos os anos: ordenados, electricidade, limpeza.</div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">4</div><div class="st"><strong>Despesas de capital</strong> — investimentos únicos: obras, equipamentos.</div></li>
-      </ul><div class="atencao">⚠️ Não aproves um orçamento que não entendes. Pede explicação para cada rubrica. É o teu direito e a tua obrigação.</div></div>
-    </div>
-
-    <div class="card" id="din3"><div class="card-hdr" onclick="tog('din3')"><div class="card-emoji">📋</div><div class="card-b"><div class="card-tag" style="color:var(--amber)">Planeamento</div><div class="card-title">O que são as GOP e o PPI?</div></div><div class="card-arr">›</div></div>
+    <div class="card" id="m1">
+      <div class="card-hdr" onclick="tog('m1')">
+        <div class="card-emoji">📋</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Início</div><div class="card-title">Como abro e conduzo uma sessão?</div></div><div class="card-arr">›</div>
+      </div>
       <div class="card-content">
-        <div class="card-desc"><strong>Grandes Opções do Plano (GOP)</strong> — as prioridades da junta para o ano. O orçamento tem de ser coerente com as GOP.</div>
-        <div class="card-desc" style="margin-top:8px"><strong>PPI — Plano Plurianual de Investimentos</strong> — o plano de obras dos próximos 4 anos.</div>
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Verifica o quórum</strong> — conta os presentes. Sem maioria dos membros em efectividade, a sessão não pode abrir.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Declara a sessão aberta</strong> e anuncia a ordem do dia.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Submete a ata da sessão anterior</strong> à aprovação — pergunta se há correcções a propor.</div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>Abre o período de antes da ordem do dia</strong> — qualquer membro pode usar este tempo.</div></li>
+          <li class="step"><div class="sn">5</div><div class="st"><strong>Percorre os pontos</strong> — abre discussão, dá a palavra, conduz a votação, anuncia o resultado.</div></li>
+        </ul>
+        <div class="atencao">⚠️ Não podes recusar a palavra a nenhum membro que a peça durante a discussão. Podes limitar o tempo — não podes calar.</div>
+      </div>
+    </div>
+
+    <div class="card" id="m2">
+      <div class="card-hdr" onclick="tog('m2')">
+        <div class="card-emoji">📊</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Votações</div><div class="card-title">Como conduzo uma votação?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Anuncia claramente o que se vai votar.</strong> Repete a proposta em voz alta antes de votar.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Pergunta em separado:</strong> "Quem vota a favor?" → "Quem vota contra?" → "Quem se abstém?"</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Anuncia o resultado</strong> com os números: "Aprovado por X votos a favor, Y contra e Z abstenções."</div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>Dá espaço para declarações de voto</strong> — qualquer membro tem direito a explicar o seu voto após a votação.</div></li>
+        </ul>
+        <div class="law">📖 O regimento define os tempos de intervenção. Se não existir regimento aprovado, aplica-se o regime supletivo da lei.</div>
+      </div>
+    </div>
+
+    <div class="card" id="m3">
+      <div class="card-hdr" onclick="tog('m3')">
+        <div class="card-emoji">📜</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Regimento</div><div class="card-title">O que é o regimento e porque importa?</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <div class="card-desc">O regimento é o conjunto de regras internas que define como a assembleia funciona — tempos de intervenção, como se pede a palavra, como se fazem propostas.</div>
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Se não existe regimento</strong> — propõe a sua aprovação como primeiro ponto de uma sessão.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>O regimento é aprovado pela assembleia</strong> por maioria absoluta dos membros.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Uma vez aprovado,</strong> toda a gente — maioria e oposição — está sujeita às mesmas regras.</div></li>
+        </ul>
+        <div class="tip">💡 Um bom regimento protege a oposição. Define tempos iguais para todos e garante o direito de resposta. Propõe a sua aprovação logo no início do mandato.</div>
+      </div>
+    </div>
+
+    <div class="card" id="m4">
+      <div class="card-hdr" onclick="tog('m4')">
+        <div class="card-emoji">🧾</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Ata</div><div class="card-title">A ata — responsabilidades da mesa</div></div><div class="card-arr">›</div>
+      </div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>A ata é lavrada pelo secretário</strong> da mesa ou por quem for designado pelo presidente.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Deve conter:</strong> data, local, presentes, pontos discutidos, deliberações, resultados das votações, declarações de voto e encerramento.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>É lida e aprovada</strong> no início da sessão seguinte. Os membros podem propor correcções.</div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>Depois de aprovada</strong> é assinada pelo presidente e pelo secretário da mesa.</div></li>
+        </ul>
+        <div class="atencao">⚠️ Uma ata incompleta ou incorrecta pode ser contestada. Garante que tudo fica registado com exactidão — incluindo as intervenções da oposição.</div>
+      </div>
+    </div>
+
+  </div>
+  <nav class="bottom-nav">
+    <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
+    <button class="nb active"><div class="nb-i">🪑</div>Mesa</button>
+    <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
+  </nav>
+</div>
+
+<!-- ══════ PRESIDENTE JUNTA ══════ -->
+<div class="screen" id="s-pj">
+  <div class="topbar"><div class="topbar-inner">
+    <button class="back" onclick="goBack()">‹</button>
+    <div class="tcopy"><div class="ttitle">👤 Presidente de Junta</div><div class="tsub">Competências e obrigações</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
+  </div></div>
+  <div class="body">
+    <div class="slabel">O que devo fazer quando…</div>
+    <div class="card" id="pj1">
+      <div class="card-hdr" onclick="tog('pj1')"><div class="card-emoji">😤</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Atendimento</div><div class="card-title">Um munícipe vem queixar-se</div></div><div class="card-arr">›</div></div>
+      <div class="card-content"><ul class="steps">
+        <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Ouve sem interromper.</strong><em>O munícipe precisa de se sentir ouvido antes de ser encaminhado.</em></div></li>
+        <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Identifica se é competência da Junta ou da Câmara.</strong><em>Junta: espaços públicos locais, limpeza. Câmara: obras maiores, licenças.</em></div></li>
+        <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Regista a queixa</strong> e dá uma resposta concreta com prazo.</div></li>
+      </ul><div class="tip">💡 Regista sempre. Uma queixa sem registo é uma queixa sem solução.</div></div>
+    </div>
+    <div class="card" id="pj2">
+      <div class="card-hdr" onclick="tog('pj2')"><div class="card-emoji">🗳️</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Reuniões</div><div class="card-title">Conduzir uma reunião de junta</div></div><div class="card-arr">›</div></div>
+      <div class="card-content"><ul class="steps">
+        <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Convoca com mínimo 3 dias úteis</strong> e ordem do dia definida.</div></li>
+        <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Prepara documentos</strong> de suporte para cada ponto.</div></li>
+        <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Ata obrigatória:</strong> data, presentes, deliberações e votações.</div></li>
+      </ul><div class="law">📖 <strong>Lei 75/2013, art. 24.º —</strong> O presidente convoca e preside. Deliberações por maioria.</div></div>
+    </div>
+    <div class="card" id="pj3">
+      <div class="card-hdr" onclick="tog('pj3')"><div class="card-emoji">💰</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Finanças</div><div class="card-title">Gerir o orçamento da junta</div></div><div class="card-arr">›</div></div>
+      <div class="card-content"><ul class="steps">
+        <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Só gastas o que está aprovado</strong> pela Assembleia de Freguesia.</div></li>
+        <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Toda a despesa precisa de documento:</strong> fatura ou recibo. Sem documento é irregular.</div></li>
+        <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Até €20k</strong> ajuste direto · <strong>€20-75k</strong> 3 orçamentos · <strong>+€75k</strong> concurso público.</div></li>
+      </ul></div>
+    </div>
+    <div class="card" id="pj4">
+      <div class="card-hdr" onclick="tog('pj4')"><div class="card-emoji">🔗</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Câmara</div><div class="card-title">Pedir algo à Câmara Municipal</div></div><div class="card-arr">›</div></div>
+      <div class="card-content"><ul class="steps">
+        <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Faz sempre por escrito</strong> — ofício ou email com data e assinatura.</div></li>
+        <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Sê específico:</strong> o quê, onde, quando e porquê é urgente.</div></li>
+        <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Após 10 dias sem resposta:</strong> novo pedido por escrito e escala ao Presidente da Câmara.</div></li>
+      </ul><div class="tip">💡 Um pedido verbal não existe. Um ofício escrito tem prazo legal de resposta.</div></div>
+    </div>
+  </div>
+  <nav class="bottom-nav">
+    <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
+    <button class="nb active"><div class="nb-i">👤</div>Junta</button>
+    <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
+  </nav>
+</div>
+
+<!-- ══════ MEMBRO JUNTA ══════ -->
+<div class="screen" id="s-mj">
+  <div class="topbar"><div class="topbar-inner">
+    <button class="back" onclick="goBack()">‹</button>
+    <div class="tcopy"><div class="ttitle">🤝 Membro da Junta</div><div class="tsub">O teu papel no executivo</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
+  </div></div>
+  <div class="body">
+    <div class="slabel">O que devo fazer</div>
+    <div class="card" id="mj1">
+      <div class="card-hdr" onclick="tog('mj1')"><div class="card-emoji">📌</div><div class="card-b"><div class="card-tag" style="color:var(--blue)">Pelouros</div><div class="card-title">Tenho um pelouro — o que significa?</div></div><div class="card-arr">›</div></div>
+      <div class="card-content"><ul class="steps">
+        <li class="step"><div class="sn" style="background:var(--blue)">1</div><div class="st"><strong>O pelouro é delegado pelo presidente.</strong> Tens autonomia de execução nessa área.<em>A responsabilidade final continua a ser do presidente.</em></div></li>
+        <li class="step"><div class="sn" style="background:var(--blue)">2</div><div class="st"><strong>Define prioridades</strong> em conjunto com o presidente no início do mandato.</div></li>
+        <li class="step"><div class="sn" style="background:var(--blue)">3</div><div class="st"><strong>Reporta regularmente</strong> ao presidente. Sem surpresas.</div></li>
+        <li class="step"><div class="sn" style="background:var(--blue)">4</div><div class="st"><strong>Nas reuniões de junta</strong> apresentas os pontos do teu pelouro quando pedido.</div></li>
+      </ul><div class="tip">💡 Pelouro delegado não é pelouro esquecido. Mantém comunicação regular com o presidente.</div></div>
+    </div>
+    <div class="card" id="mj2">
+      <div class="card-hdr" onclick="tog('mj2')"><div class="card-emoji">📞</div><div class="card-b"><div class="card-tag" style="color:var(--blue)">Atendimento</div><div class="card-title">Um munícipe contacta-me diretamente</div></div><div class="card-arr">›</div></div>
+      <div class="card-content"><ul class="steps">
+        <li class="step"><div class="sn" style="background:var(--blue)">1</div><div class="st"><strong>Ouve e regista.</strong> A tua resposta representa a Junta.</div></li>
+        <li class="step"><div class="sn" style="background:var(--blue)">2</div><div class="st"><strong>Do teu pelouro:</strong> age. <strong>Fora do pelouro:</strong> encaminha ao presidente.</div></li>
+        <li class="step"><div class="sn" style="background:var(--blue)">3</div><div class="st"><strong>Dá sempre um prazo realista</strong> ao munícipe.</div></li>
+      </ul></div>
+    </div>
+  </div>
+  <nav class="bottom-nav">
+    <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
+    <button class="nb active"><div class="nb-i">🤝</div>Junta</button>
+    <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
+    <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
+  </nav>
+</div>
+
+<!-- ══════ APRENDER ══════ -->
+<div class="screen" id="s-aprender">
+  <div class="topbar"><div class="topbar-inner">
+    <button class="back" onclick="goBack()">‹</button>
+    <div class="tcopy"><div class="ttitle">📖 Aprender</div><div class="tsub">Perceber como tudo funciona</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
+  </div></div>
+  <div class="body">
+    <div class="banner">
+      <div class="banner-icon">🎯</div>
+      <div class="banner-text"><strong>Não precisas de ser advogado.</strong>Precisas de perceber o suficiente para fazeres as perguntas certas e exigires respostas.</div>
+    </div>
+
+    <div class="slabel">💰 O dinheiro da Junta</div>
+
+    <div class="card" id="ap1">
+      <div class="card-hdr" onclick="tog('ap1')"><div class="card-emoji">💶</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Receitas</div><div class="card-title">De onde vem o dinheiro da junta?</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div class="card-desc">O dinheiro da junta vem de <strong>4 fontes principais:</strong></div>
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>FFF — Fundo de Financiamento das Freguesias</strong><em>O Estado distribui por todas as juntas 2,5% do IRS + IRC + IVA cobrados em Portugal. Cada junta recebe uma fatia calculada pela sua população e área. Em 2024 foram 349 milhões de euros para todo o país.</em></div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Câmara Municipal</strong><em>A Câmara transfere verbas quando delega competências à junta — ex: manutenção de caminhos municipais.</em></div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Receitas próprias</strong><em>Taxas de cemitério, mercados, coimas, rendimento de imóveis próprios da junta.</em></div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>IMI rústico</strong><em>50% do Imposto Municipal sobre Imóveis cobrado sobre terrenos rústicos da freguesia vai directamente para a junta.</em></div></li>
+        </ul>
+        <div class="tip">💡 Nas juntas pequenas de Montalegre, o FFF é a fonte principal. Podes saber o valor exacto que a tua junta recebe no Mapa 13 da Lei do Orçamento do Estado de cada ano.</div>
+      </div>
+    </div>
+
+    <div class="card" id="ap2">
+      <div class="card-hdr" onclick="tog('ap2')"><div class="card-emoji">📊</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Orçamento</div><div class="card-title">O que é o orçamento e como se aprova?</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div class="card-desc">O orçamento é o plano anual do dinheiro da junta — o que vai entrar (receitas) e o que vai sair (despesas). <strong>Quem o aprova é a Assembleia de Freguesia — não o presidente da junta.</strong></div>
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>O presidente propõe</strong> o orçamento à Assembleia de Freguesia antes do final do ano.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>A Assembleia discute e vota.</strong> Podes votar contra, pedir esclarecimentos ou propor alterações.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Tem de ser aprovado até 31 de Dezembro.</strong> Se não for, a junta funciona com duodécimos — 1/12 do orçamento do ano anterior por mês, só em despesas correntes.</div></li>
+        </ul>
+        <div class="atencao">⚠️ Não aproves um orçamento que não entendes. Pede explicação para cada rubrica. É o teu direito e a tua obrigação como membro da assembleia.</div>
+      </div>
+    </div>
+
+    <div class="card" id="ap3">
+      <div class="card-hdr" onclick="tog('ap3')"><div class="card-emoji">🔎</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Fiscalização</div><div class="card-title">Como sei se o dinheiro está a ser bem gasto?</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div class="card-desc">Pede o <strong>mapa de execução orçamental</strong> — mostra o que foi orçamentado vs. o que foi realmente gasto. Tens direito a pedi-lo a qualquer momento por escrito.</div>
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>"Estava isto orçamentado?"</strong><em>Se gastaram dinheiro fora do orçamento — é ilegal.</em></div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>"Existe documento desta despesa?"</strong><em>Toda a despesa tem de ter fatura ou recibo. Sem documento é irregular.</em></div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>"Houve concurso ou pediram 3 orçamentos?"</strong><em>Acima de €20.000 é obrigatório pedir propostas a pelo menos 3 empresas.</em></div></li>
+        </ul>
+        <div class="tip">💡 Não precisas de saber contabilidade. Estas 3 perguntas bastam. Se não consegues resposta — é um sinal de alerta.</div>
+      </div>
+    </div>
+
+    <div class="slabel">📋 Reuniões e documentos</div>
+
+    <div class="card" id="ap4">
+      <div class="card-hdr" onclick="tog('ap4')"><div class="card-emoji">📜</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Ata</div><div class="card-title">Como leio uma ata e o que procuro?</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div class="card-desc">A ata é o registo oficial da reunião. <strong>O que não está na ata, não aconteceu legalmente.</strong> É a tua memória institucional e a tua arma política.</div>
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Quem esteve presente.</strong> Verifica se havia quórum — sem membros suficientes, as deliberações podem ser inválidas.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>O que foi deliberado</strong> em cada ponto — e como cada membro votou.</div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>O que foi prometido</strong> — obras aprovadas, pedidos aceites, prazos comprometidos.</div></li>
+          <li class="step"><div class="sn">4</div><div class="st"><strong>As tuas intervenções</strong> — estão registadas correctamente? Se algo importante ficou de fora, pede correcção.</div></li>
+        </ul>
+        <div class="tip">💡 Compara atas de reuniões diferentes. O que foi prometido e não foi feito — é material político valioso.</div>
+      </div>
+    </div>
+
+    <div class="card" id="ap5">
+      <div class="card-hdr" onclick="tog('ap5')"><div class="card-emoji">📅</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Calendário</div><div class="card-title">Quando reúne a Assembleia e o que aprova?</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <ul class="steps">
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Ordinariamente: 4 vezes por ano</strong> — uma por trimestre.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Sessões obrigatórias:</strong><em>Abril: conta de gerência do ano anterior · Outubro/Novembro: Grandes Opções do Plano · Dezembro: orçamento do ano seguinte</em></div></li>
+          <li class="step"><div class="sn">3</div><div class="st"><strong>Sessão extraordinária:</strong> podes pedir com 1/3 dos membros da assembleia — inclui os da oposição.</div></li>
+        </ul>
+        <div class="direito">✅ Se achares que há assuntos urgentes, podes convocar uma sessão extraordinária juntando as assinaturas de 1/3 dos membros da assembleia.</div>
+        <div class="law">📖 <strong>Lei 75/2013, art. 8.º —</strong> A Assembleia de Freguesia reúne ordinariamente 4 vezes por ano.</div>
+      </div>
+    </div>
+
+    <div class="card" id="ap6">
+      <div class="card-hdr" onclick="tog('ap6')"><div class="card-emoji">📋</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Documentos</div><div class="card-title">O que são as Grandes Opções do Plano e o PPI?</div></div><div class="card-arr">›</div></div>
+      <div class="card-content">
+        <div class="card-desc"><strong>Grandes Opções do Plano (GOP)</strong> são as prioridades estratégicas da junta para o ano — o que vai fazer e porquê. O orçamento tem de ser coerente com as GOP.</div>
+        <div class="card-desc" style="margin-top:8px"><strong>PPI — Plano Plurianual de Investimentos</strong> é o plano de obras e investimentos para os próximos 4 anos. Não é o orçamento do ano — é a visão de longo prazo.</div>
         <ul class="steps" style="margin-top:10px">
-          <li class="step"><div class="sn" style="background:var(--amber)">1</div><div class="st"><strong>Ambos são aprovados pela Assembleia.</strong> Podes votar contra e propor alterações.</div></li>
-          <li class="step"><div class="sn" style="background:var(--amber)">2</div><div class="st"><strong>Compara GOP com orçamento:</strong> se prometem obras mas não há verba — questiona.</div></li>
+          <li class="step"><div class="sn">1</div><div class="st"><strong>Ambos são aprovados pela Assembleia de Freguesia.</strong> Tens direito de votar contra, propor alterações e declarar voto.</div></li>
+          <li class="step"><div class="sn">2</div><div class="st"><strong>Compara as GOP com o orçamento:</strong> se prometem melhorar os caminhos mas não há verba para isso — questiona.</div></li>
         </ul>
         <div class="tip">💡 As GOP são a promessa política. O orçamento é o cheque. Se não coincidem — é uma contradição que deves denunciar em sessão.</div>
       </div>
     </div>
 
-    <div class="slabel">Como fiscalizar</div>
-    <div class="card" id="din4"><div class="card-hdr" onclick="tog('din4')"><div class="card-emoji">🔎</div><div class="card-b"><div class="card-tag" style="color:var(--amber)">Fiscalização</div><div class="card-title">Como sei se o dinheiro está a ser bem gasto?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><div class="card-desc">Pede o <strong>mapa de execução orçamental</strong> — mostra o que foi orçamentado vs. o que foi realmente gasto. Tens direito a pedi-lo a qualquer momento.</div><ul class="steps">
-        <li class="step"><div class="sn" style="background:var(--amber)">1</div><div class="st"><strong>"Estava isto orçamentado?"</strong><em>Se gastaram fora do orçamento — é ilegal.</em></div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">2</div><div class="st"><strong>"Existe documento desta despesa?"</strong><em>Toda a despesa tem de ter fatura ou recibo. Sem documento é irregular.</em></div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">3</div><div class="st"><strong>"Houve concurso ou pediram 3 orçamentos?"</strong><em>Acima de €20.000 é obrigatório pedir 3 propostas.</em></div></li>
-      </ul><div class="tip">💡 Estas 3 perguntas bastam. Se não consegues resposta — é um sinal de alerta.</div></div>
-    </div>
-
-    <div class="card" id="din5"><div class="card-hdr" onclick="tog('din5')"><div class="card-emoji">📏</div><div class="card-b"><div class="card-tag" style="color:var(--amber)">Contratos</div><div class="card-title">Quanto pode a junta gastar sem concurso?</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn" style="background:var(--amber)">1</div><div class="st"><strong>Até €5.000</strong> — ajuste directo simplificado. Escolhe directamente.</div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">2</div><div class="st"><strong>€5.001 a €20.000</strong> — ajuste directo com contrato escrito obrigatório.</div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">3</div><div class="st"><strong>€20.001 a €75.000</strong> — consulta prévia: pede propostas a pelo menos 3 empresas.</div></li>
-        <li class="step"><div class="sn" style="background:var(--amber)">4</div><div class="st"><strong>Acima de €75.000</strong> — concurso público obrigatório no portal BASE.gov.pt.</div></li>
-      </ul><div class="atencao">⚠️ Toda a contratação tem de ficar documentada. Sem contrato e fatura — é irregular.</div></div>
-    </div>
-    <div class="disclaimer">⚠️ Apoio político e formativo. Não substitui assessoria jurídica especializada.</div>
   </div>
   <nav class="bottom-nav">
-    <button class="nb" onclick="goTo('s-home')"><div class="nb-i">🏠</div>Início</button>
-    <button class="nb" onclick="goTo('s-direitos')"><div class="nb-i">⚖️</div>Direitos</button>
-    <button class="nb active"><div class="nb-i">💰</div>Dinheiro</button>
-    <button class="nb" onclick="goTo('s-comunicar')"><div class="nb-i">📣</div>Comunicar</button>
-    <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
-  </nav>
-</div>
-
-<!-- ══════ COMUNICAR ══════ -->
-<div class="screen" id="s-comunicar">
-  <div class="topbar"><div class="topbar-inner">
-    <button class="back" onclick="goBack()">‹</button>
-    <div class="tcopy"><div class="ttitle">📣 Comunicar</div><div class="tsub">Regras, terreno e templates</div></div>
-    <button class="pbtn" onclick="printScreen()"><span>🖨️</span><span>Imprimir</span></button>
-    <button class="tbtn" onclick="doLogout()">Sair</button>
-  </div></div>
-  <div class="body">
-    <div class="banner"><div style="font-size:22px;flex-shrink:0">📣</div><div class="banner-txt"><strong>Comunicar é governar.</strong>Quem não comunica o que faz, cede o espaço político à maioria. Depois de cada sessão — comunica.</div></div>
-
-    <div class="slabel">1. Regras de ouro</div>
-    <div class="card" id="com1"><div class="card-hdr" onclick="tog('com1')"><div class="card-emoji">📐</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Princípios</div><div class="card-title">As 5 regras da comunicação política</div></div><div class="card-arr">›</div></div>
-      <div class="card-content">
-        <div class="regra"><div style="font-size:16px;flex-shrink:0">📊</div><div><div class="regra-title">Usa factos e números</div><div class="regra-desc">"A junta gastou €3.200 em X sem concurso" é mais forte do que "a junta gere mal".</div></div></div>
-        <div class="regra"><div style="font-size:16px;flex-shrink:0">🎯</div><div><div class="regra-title">Critica a decisão, não as pessoas</div><div class="regra-desc">"Esta obra não estava orçamentada" é melhor do que "o presidente é incompetente".</div></div></div>
-        <div class="regra"><div style="font-size:16px;flex-shrink:0">⏰</div><div><div class="regra-title">Publica logo após a sessão</div><div class="regra-desc">O impacto cai rapidamente. Publica nas 24h seguintes.</div></div></div>
-        <div class="regra"><div style="font-size:16px;flex-shrink:0">💬</div><div><div class="regra-title">Responde sempre a comentários</div><div class="regra-desc">Um comentário sem resposta parece uma derrota. Responde com factos.</div></div></div>
-        <div class="regra"><div style="font-size:16px;flex-shrink:0">🔄</div><div><div class="regra-title">Sê consistente</div><div class="regra-desc">Uma publicação por sessão, sempre. A consistência constrói credibilidade.</div></div></div>
-      </div>
-    </div>
-
-    <div class="slabel">2. No terreno</div>
-    <div class="card" id="com2"><div class="card-hdr" onclick="tog('com2')"><div class="card-emoji">🚶</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Presencial</div><div class="card-title">Alguém aborda-me com uma queixa</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Para e ouve até ao fim.</strong><em>A pessoa quer ser ouvida — isso já resolve metade.</em></div></li>
-        <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Diz:</strong> "Percebo. Deixa-me ver o que posso fazer."<em>Não promettas resolver se não tens a certeza.</em></div></li>
-        <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Regista:</strong> nome, aldeia, problema, data.</div></li>
-        <li class="step"><div class="sn" style="background:var(--green)">4</div><div class="st"><strong>Dá um prazo realista:</strong> "Falo sobre isto na próxima reunião."</div></li>
-      </ul><div class="tip">💡 Nunca digas "não há nada a fazer". Diz sempre o que vais tentar, mesmo que o resultado seja incerto.</div></div>
-    </div>
-
-    <div class="card" id="com3"><div class="card-hdr" onclick="tog('com3')"><div class="card-emoji">🗳️</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Presencial</div><div class="card-title">Tenho de explicar uma votação a alguém simples</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Usa linguagem simples.</strong><em>Em vez de "votámos contra por razões orçamentais" diz "votámos contra porque este gasto não estava planeado e não há dinheiro".</em></div></li>
-        <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Explica o que propuseste em alternativa.</strong> A oposição não é só dizer não — é dizer "não assim, mas propomos isto".</div></li>
-        <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Se a pessoa discordar,</strong> aceita sem conflito: "Percebo que vês de forma diferente. É normal."</div></li>
-      </ul><div class="tip">💡 Se não consegues explicar em duas frases, ainda não percebeste bem o assunto tu próprio.</div></div>
-    </div>
-
-    <div class="card" id="com4"><div class="card-hdr" onclick="tog('com4')"><div class="card-emoji">😤</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Presencial</div><div class="card-title">Alguém está irritado ou agressivo comigo</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><ul class="steps">
-        <li class="step"><div class="sn" style="background:var(--green)">1</div><div class="st"><strong>Não respondas no mesmo tom.</strong> Quem fica calmo tem sempre mais poder.</div></li>
-        <li class="step"><div class="sn" style="background:var(--green)">2</div><div class="st"><strong>Diz:</strong> "Percebo que estás chateado. Tens razão em estar preocupado."</div></li>
-        <li class="step"><div class="sn" style="background:var(--green)">3</div><div class="st"><strong>Se escalar:</strong> "Posso falar contigo quando estiveres mais tranquilo."</div></li>
-      </ul><div class="atencao">⚠️ Nunca discutas em público de forma agressiva — mesmo que tenhas razão, quem grita perde.</div></div>
-    </div>
-
-    <div class="card" id="com5"><div class="card-hdr" onclick="tog('com5')"><div class="card-emoji">💬</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Presencial</div><div class="card-title">Frases úteis para situações difíceis</div></div><div class="card-arr">›</div></div>
-      <div class="card-content">
-        <div style="margin-bottom:10px"><div style="font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--g400);margin-bottom:5px">Quando não sabes a resposta</div><div style="background:var(--blue-bg);border-left:3px solid var(--blue);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:9px 11px;font-size:12px;color:var(--blue);line-height:1.6">"Não sei de cor, mas vou informar-me e dou-te resposta."</div></div>
-        <div style="margin-bottom:10px"><div style="font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--g400);margin-bottom:5px">Quando não é da tua competência</div><div style="background:var(--blue-bg);border-left:3px solid var(--blue);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:9px 11px;font-size:12px;color:var(--blue);line-height:1.6">"É responsabilidade da Câmara, mas posso ajudar-te a fazer o pedido por escrito."</div></div>
-        <div style="margin-bottom:10px"><div style="font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--g400);margin-bottom:5px">Quando dizem que o PSD não faz nada</div><div style="background:var(--blue-bg);border-left:3px solid var(--blue);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:9px 11px;font-size:12px;color:var(--blue);line-height:1.6">"Na última sessão, o PSD propôs X e votou contra Y por causa de Z. Está em ata — posso mostrar-te."</div></div>
-        <div><div style="font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--g400);margin-bottom:5px">Quando querem que resolvas tudo já</div><div style="background:var(--blue-bg);border-left:3px solid var(--blue);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:9px 11px;font-size:12px;color:var(--blue);line-height:1.6">"O que posso fazer já é levar à próxima reunião e garantir que fica registado."</div></div>
-      </div>
-    </div>
-
-    <div class="slabel">3. Checklist pós-reunião</div>
-    <div class="card" id="com6"><div class="card-hdr" onclick="tog('com6')"><div class="card-emoji">✅</div><div class="card-b"><div class="card-tag" style="color:var(--o)">Checklist</div><div class="card-title">O que fazer depois de cada sessão</div></div><div class="card-arr">›</div></div>
-      <div class="card-content">
-        <div class="checklist-item" onclick="chk(this)"><div class="chk"></div><div><div class="chk-text">Tenho notas do que foi deliberado</div><div class="chk-sub">Decisões, votações, resultados</div></div></div>
-        <div class="checklist-item" onclick="chk(this)"><div class="chk"></div><div><div class="chk-text">Registei como votei e porquê</div><div class="chk-sub">Inclui declarações de voto</div></div></div>
-        <div class="checklist-item" onclick="chk(this)"><div class="chk"></div><div><div class="chk-text">Pedi a ata para verificar</div><div class="chk-sub">As minhas intervenções estão registadas?</div></div></div>
-        <div class="checklist-item" onclick="chk(this)"><div class="chk"></div><div><div class="chk-text">Publiquei resumo no Facebook</div><div class="chk-sub">O que foi discutido, aprovado e rejeitado</div></div></div>
-        <div class="checklist-item" onclick="chk(this)"><div class="chk"></div><div><div class="chk-text">Comuniquei à estrutura do PSD</div><div class="chk-sub">Informei o José Pedro sobre situações relevantes</div></div></div>
-        <div class="checklist-item" onclick="chk(this)" style="border-bottom:none"><div class="chk"></div><div><div class="chk-text">Identifiquei pontos para acompanhar</div><div class="chk-sub">Promessas feitas, pedidos enviados, prazos</div></div></div>
-      </div>
-    </div>
-
-    <div class="slabel">4. Templates prontos</div>
-    <div class="card" id="com7"><div class="card-hdr" onclick="tog('com7')"><div class="card-emoji">📘</div><div class="card-b"><div class="card-tag" style="color:var(--blue)">Facebook</div><div class="card-title">Post após uma reunião</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><div class="tpl"><div class="tpl-label">Copia, adapta e publica</div><div id="tpl1" class="tpl-text">📋 Assembleia de Freguesia de [FREGUESIA] — [DATA]
-
-Estive presente na sessão de hoje. Resumo:
-
-✅ [O que foi aprovado]
-❌ [O que votámos contra e porquê]
-🔍 Ficámos a aguardar: [pedido em aberto]
-
-O PSD estará sempre presente para garantir que os dinheiros públicos são bem geridos.
-
-#PSDMontalegre #[Freguesia]</div><button class="copy-btn" onclick="cpt('tpl1',this)">📋 Copiar template</button></div></div>
-    </div>
-    <div class="card" id="com8"><div class="card-hdr" onclick="tog('com8')"><div class="card-emoji">🗳️</div><div class="card-b"><div class="card-tag" style="color:var(--purple)">Declaração</div><div class="card-title">Comunicar uma declaração de voto</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><div class="tpl"><div class="tpl-label">Copia, adapta e publica</div><div id="tpl2" class="tpl-text">Na sessão de [DATA] da Assembleia de Freguesia de [FREGUESIA], o PSD votou CONTRA a proposta de [TEMA].
-
-O motivo: [explicação simples].
-
-Entendemos que [argumento alternativo].
-
-Esta posição ficou registada em ata.
-
-PSD Montalegre — na oposição para servir melhor.</div><button class="copy-btn" onclick="cpt('tpl2',this)">📋 Copiar template</button></div></div>
-    </div>
-    <div class="card" id="com9"><div class="card-hdr" onclick="tog('com9')"><div class="card-emoji">⚡</div><div class="card-b"><div class="card-tag" style="color:var(--red)">Resposta</div><div class="card-title">Responder a um ataque político</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><div class="tpl"><div class="tpl-label">Responde com factos — nunca com insultos</div><div id="tpl3" class="tpl-text">Em resposta ao comunicado de [QUEM]:
-
-Os factos são estes: [dado concreto — número, data, documento].
-
-Na sessão de [DATA], o PSD [o que propôs ou como votou]. Está registado em ata e é público.
-
-Preferimos falar com factos do que com adjectivos.
-
-PSD Montalegre</div><button class="copy-btn" onclick="cpt('tpl3',this)">📋 Copiar template</button></div>
-      <div class="atencao">⚠️ Nunca respondas com insultos. Quem ataca pessoalmente perde sempre o debate.</div></div>
-    </div>
-    <div class="card" id="com10"><div class="card-hdr" onclick="tog('com10')"><div class="card-emoji">✉️</div><div class="card-b"><div class="card-tag" style="color:var(--green)">Ofício</div><div class="card-title">Pedir informação ao presidente da junta</div></div><div class="card-arr">›</div></div>
-      <div class="card-content"><div class="tpl"><div class="tpl-label">Envia por email ou carta registada</div><div id="tpl4" class="tpl-text">Exmo. Sr. Presidente da Junta de Freguesia de [FREGUESIA],
-
-Ao abrigo do artigo 4.º da Lei n.º 24/98 (Estatuto do Direito de Oposição), venho solicitar os seguintes documentos:
-
-1. [Documento pedido]
-2. [Segundo pedido]
-
-Solicito resposta no prazo de 10 dias úteis.
-
-Com os melhores cumprimentos,
-[Nome]
-Membro da Assembleia de Freguesia — PSD</div><button class="copy-btn" onclick="cpt('tpl4',this)">📋 Copiar template</button></div>
-      <div class="tip">💡 Guarda cópia com a data. Sem resposta em 10 dias — tens prova do incumprimento.</div></div>
-    </div>
-    <div class="disclaimer">⚠️ Apoio político e formativo. Não substitui assessoria jurídica especializada.</div>
-  </div>
-  <nav class="bottom-nav">
-    <button class="nb" onclick="goTo('s-home')"><div class="nb-i">🏠</div>Início</button>
-    <button class="nb" onclick="goTo('s-direitos')"><div class="nb-i">⚖️</div>Direitos</button>
-    <button class="nb" onclick="goTo('s-dinheiro')"><div class="nb-i">💰</div>Dinheiro</button>
-    <button class="nb active"><div class="nb-i">📣</div>Comunicar</button>
+    <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
+    <button class="nb" onclick="goTo('s-af')"><div class="nb-i">📋</div>Assembleia</button>
+    <button class="nb active"><div class="nb-i">📖</div>Aprender</button>
     <button class="nb" onclick="goTo('s-contactos')"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
@@ -595,15 +718,18 @@ Membro da Assembleia de Freguesia — PSD</div><button class="copy-btn" onclick=
 <div class="screen" id="s-contactos">
   <div class="topbar"><div class="topbar-inner">
     <button class="back" onclick="goBack()">‹</button>
-    <div class="tcopy"><div class="ttitle">📞 Contactos</div><div class="tsub">Comissão Política PSD Montalegre</div></div>
-    <button class="pbtn" onclick="printScreen()"><span>🖨️</span><span>Imprimir</span></button>
-    <button class="tbtn" onclick="doLogout()">Sair</button>
+    <div class="tcopy"><div class="ttitle">📞 Contactos</div><div class="tsub">Estrutura PSD Montalegre</div></div>
+      <button onclick="doLogout()" style="background:rgba(255,255,255,0.2);border:none;border-radius:20px;padding:5px 10px;color:white;font-size:11px;font-weight:600;cursor:pointer;flex-shrink:0;font-family:var(--font)">Sair</button>
   </div></div>
   <div class="body">
-    <div style="background:var(--o);border-radius:var(--r);padding:18px 16px;margin-bottom:16px;text-align:center">
-      <div style="font-size:20px;margin-bottom:6px">💬</div>
-      <div style="font-size:16px;font-weight:800;color:white;margin-bottom:3px">Tens dúvidas?</div>
-      <div style="font-size:12px;color:rgba(255,255,255,0.85);line-height:1.5">Contacta a Comissão Política<br><strong style="color:white">PSD Montalegre</strong></div>
+    <div style="background:var(--o);border-radius:var(--r);padding:20px 16px;margin-bottom:16px;text-align:center">
+      <div style="font-size:22px;margin-bottom:8px">💬</div>
+      <div style="font-size:17px;font-weight:800;color:white;margin-bottom:4px">Tens dúvidas?</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6">Contacta a Comissão Política<br><strong style="color:white">PSD Montalegre</strong></div>
+    </div>
+
+    <div style="background:var(--o-bg);border-radius:var(--r);padding:16px;margin-bottom:10px;border:0.5px solid var(--g200);text-align:center">
+      <div style="font-size:14px;color:var(--g600);line-height:1.6;margin-bottom:12px">Tens dúvidas?<br>Entra em contacto com a<br><strong style="color:var(--blk)">Comissão Política PSD Montalegre</strong></div>
     </div>
     <div class="contact-card">
       <div class="cav" style="background:var(--o-bg);color:var(--o2)">JP</div>
@@ -629,121 +755,179 @@ Membro da Assembleia de Freguesia — PSD</div><button class="copy-btn" onclick=
         </div>
       </div>
     </div>
-    <div class="slabel">Redes Sociais</div>
-    <div class="social-row">
-      <a class="social-item" href="https://www.facebook.com/psdmontalegre" target="_blank">
-        <div class="social-icon" style="background:#1877F2">📘</div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--blk)">Facebook</div><div style="font-size:11px;color:var(--g400)">PSD Montalegre</div></div>
-        <div style="margin-left:auto;font-size:18px;color:var(--g400)">›</div>
-      </a>
-      <a class="social-item" href="https://psdmontalegrelistaa.netlify.app" target="_blank">
-        <div class="social-icon" style="background:var(--o)">🌐</div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--blk)">Website</div><div style="font-size:11px;color:var(--g400)">psdmontalegrelistaa.netlify.app</div></div>
-        <div style="margin-left:auto;font-size:18px;color:var(--g400)">›</div>
-      </a>
+    <div style="text-align:center;padding:16px 14px 8px;font-size:11px;color:var(--g400);line-height:1.6;border-top:0.5px solid var(--g200);margin-top:8px">
+      <div style="background:var(--g200);border-radius:var(--r-sm);padding:10px 12px;margin-bottom:10px;font-size:11px;color:var(--g600);line-height:1.6;text-align:left">
+        ⚠️ <strong style="color:var(--blk)">Aviso:</strong> Este guia é um apoio político e formativo. Não substitui a consulta da legislação aplicável nem assessoria jurídica especializada.
+      </div>
+      PSD Montalegre · Guia do Autarca · Demo
     </div>
-    <div style="text-align:center;padding:16px 0;font-size:10px;color:var(--g400)">PSD Montalegre · Guia do Autarca</div>
+
   </div>
   <nav class="bottom-nav">
-    <button class="nb" onclick="goTo('s-home')"><div class="nb-i">🏠</div>Início</button>
-    <button class="nb" onclick="goTo('s-direitos')"><div class="nb-i">⚖️</div>Direitos</button>
-    <button class="nb" onclick="goTo('s-dinheiro')"><div class="nb-i">💰</div>Dinheiro</button>
-    <button class="nb" onclick="goTo('s-comunicar')"><div class="nb-i">📣</div>Comunicar</button>
+    <button class="nb" onclick="goTo('s-cargo')"><div class="nb-i">🏠</div>Início</button>
+    <button class="nb" onclick="goTo('s-af')"><div class="nb-i">📋</div>Assembleia</button>
+    <button class="nb" onclick="goTo('s-aprender')"><div class="nb-i">📖</div>Aprender</button>
     <button class="nb active"><div class="nb-i">📞</div>Contactos</button>
   </nav>
 </div>
 
 <script>
-var API_URL='https://psd-guia-backend-production.up.railway.app';
 var hist=['s-splash'];
 
 function goTo(id){
   document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});
   var el=document.getElementById(id);
   if(el){el.classList.add('active');el.scrollTop=0;}
-  if(hist[hist.length-1]!==id)hist.push(id);
+  if(hist[hist.length-1]!==id) hist.push(id);
 }
 function goBack(){
-  if(hist.length>1)hist.pop();
+  if(hist.length>1) hist.pop();
   var p=hist[hist.length-1]||'s-splash';
   document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});
   var el=document.getElementById(p);
-  if(el)el.classList.add('active');
+  if(el) el.classList.add('active');
 }
+var API_URL='https://psd-guia-backend-production.up.railway.app';
 
 async function doLogin(){
+  var email=document.getElementById('emailInput').value.trim().toLowerCase();
   var code=document.getElementById('pwdInput').value.trim();
   var err=document.getElementById('loginErr');
   var btn=document.querySelector('.lbtn');
-  if(!code){err.style.display='block';err.textContent='❌ Introduz o código de acesso.';return;}
+  if(!email||!code){err.style.display='block';err.textContent='❌ Preenche o email e o código.';return;}
   btn.textContent='A entrar...';btn.disabled=true;
-  // Tenta password local primeiro
-  if(code==='montalegre2026'){
-    err.style.display='none';localStorage.setItem('psd_auth','1');goTo('s-home');
-    btn.textContent='Entrar';btn.disabled=false;return;
-  }
-  // Tenta API com código como password
   try{
-    var email=localStorage.getItem('psd_email')||code+'@psd.pt';
     var res=await fetch(API_URL+'/auth/login',{
-      method:'POST',headers:{'Content-Type':'application/json'},credentials:'include',
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      credentials:'include',
       body:JSON.stringify({email:email,password:code})
     });
     if(res.ok){
       var data=await res.json();
       err.style.display='none';
       localStorage.setItem('psd_auth','1');
-      if(data.user&&data.user.email)localStorage.setItem('psd_email',data.user.email);
-      goTo('s-home');
+      localStorage.setItem('psd_name', data.user ? data.user.name : '');
+      localStorage.setItem('psd_email', email);
+      goTo('s-cargo');
     } else {
       err.style.display='block';
-      err.textContent='❌ Código incorrecto. Contacta o José Pedro Correia.';
+      err.textContent='❌ Email ou código incorrecto. Contacta o José Pedro Correia.';
       document.getElementById('pwdInput').value='';
+      document.getElementById('pwdInput').focus();
     }
   } catch(e){
-    err.style.display='block';
-    err.textContent='❌ Erro de ligação. Tenta com o código recebido pelo WhatsApp.';
+    // fallback se API não disponível
+    if(code==='montalegre2026'){
+      err.style.display='none';
+      localStorage.setItem('psd_auth','1');
+      goTo('s-cargo');
+    } else {
+      err.style.display='block';
+      err.textContent='❌ Erro de ligação. Tenta novamente ou usa o código de emergência.';
+    }
   }
   btn.textContent='Entrar';btn.disabled=false;
+}
+function tog(id){
+  var el=document.getElementById(id);
+  if(!el) return;
+  var was=el.classList.contains('open');
+  document.querySelectorAll('.card.open').forEach(function(c){if(c.id!==id)c.classList.remove('open');});
+  el.classList.toggle('open',!was);
+  if(!was) setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+}
+
+// Auto-login se já autenticou antes
+if(localStorage.getItem('psd_auth')==='1'){
+  goTo('s-cargo');
 }
 
 async function doLogout(){
   if(confirm('Tens a certeza que queres sair?')){
-    try{await fetch(API_URL+'/auth/logout',{method:'POST',credentials:'include'});}catch(e){}
-    localStorage.removeItem('psd_auth');localStorage.removeItem('psd_email');
+    try{ await fetch(API_URL+'/auth/logout',{method:'POST',credentials:'include'}); }catch(e){}
+    localStorage.removeItem('psd_auth');
+    localStorage.removeItem('psd_name');
     document.getElementById('pwdInput').value='';
-    hist=['s-splash'];goTo('s-splash');
+    hist=['s-splash'];
+    goTo('s-splash');
   }
 }
 
-function tog(id){
-  var el=document.getElementById(id);if(!el)return;
-  var was=el.classList.contains('open');
-  document.querySelectorAll('.card.open').forEach(function(c){if(c.id!==id)c.classList.remove('open');});
-  el.classList.toggle('open',!was);
-  if(!was)setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'nearest'});},60);
+function printScreen() {
+  // Get current active screen title and content
+  var active = document.querySelector('.screen.active');
+  if (!active) return;
+  var title = active.querySelector('.ttitle, .inner-title');
+  var titleText = title ? title.textContent : 'Guia do Autarca';
+  
+  // Open all cards for printing
+  var cards = active.querySelectorAll('.card');
+  var wasOpen = [];
+  cards.forEach(function(c, i) {
+    wasOpen[i] = c.classList.contains('open');
+    c.classList.add('open');
+  });
+  
+  // Create print window
+  var printContent = active.innerHTML;
+  var win = window.open('', '_blank');
+  win.document.write(`<!DOCTYPE html>
+<html lang="pt"><head>
+<meta charset="UTF-8">
+<title>${titleText} · PSD Montalegre</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 13px; color: #111; padding: 20px; }
+  .topbar, .bottom-nav, .back, button { display: none !important; }
+  .body, .cargo-body { padding: 0 !important; }
+  .card { border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; break-inside: avoid; }
+  .card-content { display: block !important; padding: 10px 14px 14px 14px !important; }
+  .card-arr { display: none; }
+  .card-hdr { padding: 12px 14px; border-bottom: 1px solid #eee; }
+  .card-title { font-weight: bold; font-size: 13px; }
+  .card-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: #F47920; margin-bottom: 2px; }
+  .card-emoji { margin-right: 8px; }
+  .sn { display: inline-block; width: 20px; height: 20px; border-radius: 50%; background: #F47920; color: white; font-size: 10px; font-weight: bold; text-align: center; line-height: 20px; margin-right: 8px; flex-shrink: 0; }
+  .step { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-start; }
+  .st { font-size: 12px; line-height: 1.6; }
+  .st em { display: block; color: #666; font-size: 11px; margin-top: 2px; }
+  .tip, .law, .direito, .atencao { padding: 8px 10px; border-radius: 4px; margin-top: 8px; font-size: 11px; line-height: 1.5; border-left: 3px solid #F47920; background: #FEF3EB; }
+  .law { border-left-color: #1565C0; background: #E3F2FD; }
+  .direito { border-left-color: #2E7D32; background: #E8F5E9; }
+  .atencao { border-left-color: #ED1C24; background: #FDECEA; }
+  .banner { border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-bottom: 12px; display: flex; gap: 10px; }
+  .rights { border: 1px solid #ddd; border-radius: 8px; padding: 12px; }
+  .right-item { display: flex; gap: 8px; margin-bottom: 8px; font-size: 12px; }
+  .slabel { font-size: 10px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; color: #9B9993; margin: 14px 0 8px; }
+  .cargo-btn, .cargo-arr { display: none !important; }
+  h1 { font-size: 18px; font-weight: bold; margin-bottom: 4px; color: #F47920; }
+  .print-header { border-bottom: 3px solid #F47920; padding-bottom: 12px; margin-bottom: 16px; }
+  .print-footer { border-top: 1px solid #ddd; margin-top: 16px; padding-top: 10px; font-size: 10px; color: #999; }
+  @media print { body { padding: 10px; } }
+</style>
+</head><body>
+<div class="print-header">
+  <h1>PSD Montalegre · Guia do Autarca</h1>
+  <div style="font-size:12px;color:#666">${titleText}</div>
+</div>
+${printContent}
+<div class="print-footer">
+  ⚠️ Este guia é um apoio político e formativo. Não substitui a consulta da legislação aplicável nem assessoria jurídica especializada. · PSD Montalegre
+</div>
+</body></html>`);
+  win.document.close();
+  win.focus();
+  setTimeout(function() { win.print(); }, 500);
+  
+  // Restore card state
+  cards.forEach(function(c, i) { if (!wasOpen[i]) c.classList.remove('open'); });
 }
 
-function chk(el){
-  var box=el.querySelector('.chk');
-  var on=box.classList.contains('on');
-  box.classList.toggle('on',!on);
-  box.textContent=on?'':'✓';
+// Registar service worker
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(function(){});
 }
-
-function cpt(id,btn){
-  var t=document.getElementById(id);if(!t)return;
-  if(navigator.clipboard){navigator.clipboard.writeText(t.textContent);}
-  var o=btn.textContent;btn.textContent='✅ Copiado!';btn.style.background='var(--green)';
-  setTimeout(function(){btn.textContent=o;btn.style.background='';},2000);
-}
-
-function printScreen(){
-  var active=document.querySelector('.screen.active');if(!active)return;
-  var title=active.querySelector('.ttitle');
-  var titleText=title?title.textContent:'Guia do Autarca';
-  var cards=active.querySelectorAll('.card');
-  var wasOpen=[];
-  cards.forEach(function(c,i){wasOpen[i]=c.classList.contains('open');c.classList.add('open');});
-  var win=window.open('','_blank');
-  win.document.write('<!DOCTYPE html><html lang="pt"><head><meta charset="UTF-8"><title>'+titleText+' · PSD Montalegre</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:13px;color:#111;padding:20px}.topbar,.bottom-nav,.back,.pbtn,.tbtn{display:none!important}.body{padding:0!important}.card{border:1px solid #ddd;border-radius:8px;margin-bottom:10px;page-break-inside:avoid}.card-content{display:block!important;padding:10px 14px 14px!important}.card-arr{display:none}.card-hdr{padding:12px 14px;border-bottom:1px solid #eee}.card-title{font-weight:bold;font-size:13px}.card-tag{font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:#F47920;margin-bottom:2px}.sn{display:inline-flex;width:20px;height:20px;border-radius:50%;background:#F47920;color:white;font-size:10px;font-weight:bold;align-items:center;justify-content:center;margin-right:6px;flex-shrink:0}.step{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start}.st{font-size:12px;line-height:1.6}.st em{display:block;color:#666;font-size:11px;margin-top:2px}.tip{padding:8px 10px;margin-top:8px;font-size:11px;line-height:1.5;border-left:3px solid #F47920;background:#FEF3EB}.law{border-left:3px solid #1565C0;background:#E3F2FD;padding:8px 10px;margin-top:8px;font-size:11px}.direito{border-left:3px solid #2E7D32;background:#E8F5E9;padding:8px 10px;margin-top:8px;font-size:11px}.atencao{border-left:3px solid #ED1C24;background:#FDECEA;padding:8px 10px;margin-top:8px;font-size:11px}.slabel{font-size:10px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;color:#9B9993;margin:14px 0 8px}.banner{border:1px solid 
+</script>
+</body>
+</html>
